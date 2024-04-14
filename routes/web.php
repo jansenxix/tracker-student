@@ -23,7 +23,7 @@ use App\Models\landing;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/signup', function () {
+Route::get('/', function () {
     return view('signup');
 });
 Route::get('/userSignup', function () {
@@ -35,7 +35,7 @@ Route::get('/course', function () {
 
 Route::get('/form', function () {
     return view('form');
-    
+
 });
 Route::get('/profile', function () {
     return view('profile');
