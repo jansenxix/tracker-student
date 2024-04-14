@@ -14,6 +14,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
 {{-- INSERT DATA --}}
@@ -179,9 +180,10 @@
 {{-- END DELETE MODAL --}}
 
 
-        <div class="main-container d-flex">
+@include('component.sidebar')
 
-            @include('component.sidebar')
+<div class="w3-main" style="margin-left:200px">
+    @include('component.top')
             <div class="content">
                 <nav class="navbar navbar-expand-md navbar-light bg-light">
                     <div class="container-fluid">

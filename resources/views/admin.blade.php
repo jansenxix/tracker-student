@@ -11,6 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 {{-- INSERT DATA --}}
 <div class="modal fade" id="insertData" tabindex="-1" aria-labelledby="insertDataLabel" aria-hidden="true">
@@ -166,9 +167,11 @@
 
 
     <body>
+    @include('component.sidebar')
 
-        <div class="main-container d-flex">
-            @include('component.sidebar')
+    <div class="w3-main" style="margin-left:200px">
+        @include('component.top')
+
             <div class="content">
                 <nav class="navbar navbar-expand-md navbar-light bg-light">
                     <div class="container-fluid">
