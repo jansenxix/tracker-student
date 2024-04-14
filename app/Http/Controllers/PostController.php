@@ -35,7 +35,7 @@ class PostController extends Controller
     public function posts(Request $request)
     {
         $posts = Post::with("comments")->orderBy('created_at', 'desc')
-            ->offset($request->count)->limit(2)->get();
+            ->offset($request->count)->limit(3)->get();
 
         foreach ($posts as $post)
         {
