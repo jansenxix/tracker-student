@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -25,7 +27,7 @@
             <form method="POST" id="uPass">
               @csrf
             <div class="modal-body">
-            
+
                     <div class="form-group mb-3">
                         <label for="student">Enter current password:</label>
                         <input type="password"  class="input form-control"  name="cPass" id="cPass" placeholder="Enter current password:">
@@ -35,26 +37,26 @@
                       <label for="student">Enter new password:</label>
                       <input type="password"  class="input form-control"  name="nPass" id="nPass" placeholder="Enter new password:">
                   </div>
-  
-                    
-    
+
+
+
                     <div class="form-group mb-3">
                         <label for="student">Confirm password:</label>
                         <input type="password" class="input form-control"  name="conPass" id="conPass" placeholder="Confirm password:">
                     </div>
-    
-                  
 
-               
 
-    
-    
-    
+
+
+
+
+
+
             </div>
             <div class="modal-footer">
                 <button type="submit"  name="save_data" class="btn btn-primary">Save</button>
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-           
+
             </div>
             </form>
           </div>
@@ -71,14 +73,14 @@
                         <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
                       </svg></i></button>
                         <a class="navbar-brand fs-4" href="#"><span class="bg-dark rounded px-2 py-0 text-white">Admin</span></a>
-                       
+
                     </div>
                     <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fal fa-bars"></i>
                     </button>
-                   
+
                 </div>
             </nav>
     <div class="container" style="padding-bottom: 10px">
@@ -120,13 +122,11 @@
                 <div class="col-lg-6">
                     <button type="button" data-bs-target="#Changepass" data-bs-toggle="modal" class="btn btn-info">Change Password</button>
                     </div>
-            </div>  
+            </div>
             </form>
     </div>
-    
+
     </div>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
          $(document).ready(function(){
         $("#editfile").change(function(){
@@ -160,17 +160,17 @@
               $("#editFileName").val(response.file)
               let path = "image/"+ response.file;
               $("#editFileImage").attr("src", path)
-          
+
               console.log(response);
-            
+
               $('#success_message').text(response.message);
               $('#deleteModal').modal('hide');
-              
+
               }
             });
         }
 
-          
+
             $('#editDataForm').on('submit', function(e){
                 e.preventDefault();
 
@@ -183,27 +183,27 @@
                     url: "/updatecourse",
                     headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                     data: formData,
-                    dataType: "json",       
+                    dataType: "json",
                     processData: false, // Prevent jQuery from processing the data
                     contentType: false, // Set content type to false
                     success: function(response){
                                 window.location.reload();
                             },
                         error: function(data) {
-                        
+
                         }
                     })
 
             })
 
-                   
+
             $('#uPass').on('submit', function(e){
                 e.preventDefault();
                 const currentPassword =  $("#pass").val();
                 const enteredCurrent =  $("#cPass").val();
                 const password =  $("#nPass").val();
                 const confirmPassword =  $("#conPass").val();
-                
+
                 if(currentPassword !== enteredCurrent) {
                   alert("Current Password Incorrect");
                   return;
@@ -228,7 +228,7 @@
                       $("#cPass").val("");
                       $("#nPass").val("");
                       $("#conPass").val("");
-                  
+
                   }
                 });
 

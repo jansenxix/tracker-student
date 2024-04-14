@@ -24,5 +24,12 @@ class ProfileController extends Controller
         $user->save();
 
         return $user;
-    }       
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        return view("signup");
+    }
 }
