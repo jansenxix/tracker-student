@@ -38,6 +38,14 @@
                         <input type="text"  class="input form-control"  name="uName" id="uName" placeholder="Enter username" required>
                     </div>
 
+                    <div class="form-group mb-3">
+                        <label>User Type:</label>
+                        <select class="form-control" name="userType">
+                            <option value="0">Admin</option>
+                            <option value="1">Coordinator</option>
+                        </select>
+                    </div>
+
 
 
                     <div class="form-group mb-3">
@@ -98,7 +106,13 @@
                 <input type="text"  class="input form-control"  name="editUname" id="edituName" placeholder="Enter username" required>
             </div>
 
-
+              <div class="form-group mb-3">
+                  <label>User Type:</label>
+                  <select class="form-control" name="userType" id="userType">
+                      <option value="0">Admin</option>
+                      <option value="1">Coordinator</option>
+                  </select>
+              </div>
 
             <div class="form-group mb-3">
                 <label for="student">Password:</label>
@@ -197,6 +211,7 @@
                             <th data-field="id" data-sortable="true">Avatar</th>
                                 <th data-field="sname" data-sortable="true">Full Name</th>
                                 <th data-field="snumber" data-sortable="true">User Name</th>
+                                <th data-field="stype" data-sortable="true">User Type</th>
 
                                 <th data-field="Price" data-sortable="true">Action</th>
 
@@ -211,7 +226,8 @@
                               <td> <img src="image/{{$value->file}}" style=" width:45px; height:45px;  object-fit:cover;  object-position:center center; border-radius:100%;"></td>
                               <td>{{$value->fName}}</td>
                               <td>{{$value->Uname}}</td>
-                              <td><button type="button" admin-id="{{$value->id}}" admin-fName="{{$value->fName}}" admin-Uname="{{$value->Uname}}" admin-pass="{{$value->pass}}"  admin-file="{{$value->file}}"  class="btn btn-info editBtn mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="Red" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                              <td>{{$value->user_type === 0 ? "Admin" : "Coordinator"}}</td>
+                              <td><button type="button" admin-id="{{$value->id}}" admin-fName="{{$value->fName}}" admin-Uname="{{$value->Uname}}" admin-pass="{{$value->pass}}"  admin-file="{{$value->file}}"   admin-userType="{{$value->user_type}}"  class="btn btn-info editBtn mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="Red" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                 <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                                 <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
                               </svg></button>
@@ -313,6 +329,7 @@ $('.editBtn').on('click',function(){
           let editUname = $(this).attr("admin-uname")
           let editpass = $(this).attr("admin-pass")
           let editfile = $(this).attr("admin-file")
+            let userType = $(this).attr("admin-userType")
           let path = "image/"+editfile;
           $("#editFileImage").attr("src", path);
 
@@ -323,6 +340,7 @@ $('.editBtn').on('click',function(){
           $('#edituName').val(editUname);
           $('#editpass').val(editpass);
           $('#editFileName').val(editfile);
+            $('#userType').val(userType);
 
           $('#editData').modal('show');
 });
