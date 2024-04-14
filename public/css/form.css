@@ -1,0 +1,62 @@
+table {
+    width: 100%;
+}
+
+table tr td input {
+    width: 100%;
+}
+
+table tr td {
+    padding: 0 10px;
+}
+
+p,
+label {
+  font:
+    1rem 'Fira Sans',
+    sans-serif;
+}
+
+input {
+  margin: 0.4rem;
+}
+
+fieldset{
+   
+   
+    align-items:start;
+    margin-inline-start: auto;
+}
+.gender{
+    width: 25%;
+  
+   
+}
+.start {
+    display: block;
+    font:
+      1rem 'Fira Sans',
+      sans-serif;
+  }
+  
+  .bday,
+  label {
+    margin: 0.4rem 0;
+  }
+  .bday{
+    width: 100%;
+  }
+  .region{
+    display: flex;
+    justify-content: flex-start;
+    margin-inline-start: 20px;
+  }
+ #centerTable{
+  text-align: center;
+ }
+
+
+ .text-left {
+  text-align: left;
+ }
+

@@ -1,0 +1,34 @@
+#test {
+    border: 4px;
+    border-color: black;
+    border-radius: 25px;
+    border-style: round;
+    width: 400px;
+    height: auto;
+    padding: 10px;
+    margin-top: 10%;
+    background-color: whitesmoke;
+    
+    
+    }
+    h2{
+        text-align: center;
+        background-color: red;
+    }
+    h1{
+        text-align: center;
+        color:black;
+    }
+    .input{
+        height: 50px;
+    }
+    #btn {
+        margin-left: 150px;
+    }
+    body{
+     background-image: url("user.jpg");
+     background-size:cover ;
+    }
+    #already{
+     margin-left: 100px;
+    }
