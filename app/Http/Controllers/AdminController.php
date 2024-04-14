@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\admin;
+use Illuminate\Support\Facades\Log;
 
 class AdminController extends Controller
 {
@@ -44,7 +45,7 @@ class AdminController extends Controller
         $Admin->file = $request->editfile;
         $Admin->pass = $request->editpass;
         $Admin->user_type = $request->userType;
-
+        Log::info($request);
         if ($request->hasFile('editfile')) {
             $file = $request->file('editfile');
             $fileName = $file->getClientOriginalName(); // Get the original file name

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SchoolController;
@@ -66,3 +68,8 @@ Route::post('/change-password',  [ProfileController::class, 'changePass']);
 
 
 Route::get('/logout', [ProfileController::class, 'logout']);
+
+Route::post('/post', [PostController::class, 'post']);
+Route::get('/posts', [PostController::class, 'posts']);
+
+Route::post('/comment', [CommentController::class, 'comment']);

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\profile;
 use App\Models\admin;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 
 class ProfileController extends Controller
