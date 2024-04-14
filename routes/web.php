@@ -62,4 +62,4 @@ Route::post('/signup', [SignupController::class, 'store']);
 
 Route::post('/usersignUp', [UserSignupController::class, 'store']);
 Route::get('/user', [ProfileController::class, 'getUserLogin']);
-Route::get('/changepass', [ProfileController::class, 'getUserLogin']);
+Route::post('/change-password',  [ProfileController::class, 'changePass']);

@@ -15,4 +15,14 @@ class ProfileController extends Controller
     {
         return Auth::user();
     }
+
+    public function changePass(Request $request)
+    {
+        $auth = Auth::user();
+        $user = admin::find($auth->id);
+        $user->pass = $request->password;
+        $user->save();
+
+        return $user;
+    }       
 }

@@ -145,32 +145,36 @@
             });
 
         });
-
-        $.ajax({
-              type:"GET",
-              url: "/user" ,
-              headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-              dataType: "json",
-          success: function(response){
-            $("#id").val(response.id)
-            $("#name").val(response.fName)
-            $("#pass").val(response.pass)
-            $("#uname").val(response.Uname)
-            $("#editFileName").val(response.file)
-            let path = "image/"+ response.file;
-            $("#editFileImage").attr("src", path)
-        
-            console.log(response);
-           
-            $('#success_message').text(response.message);
-            $('#deleteModal').modal('hide');
+        getUser();
+        function getUser() {
+          $.ajax({
+                type:"GET",
+                url: "/user" ,
+                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                dataType: "json",
+            success: function(response){
+              $("#id").val(response.id)
+              $("#name").val(response.fName)
+              $("#pass").val(response.pass)
+              $("#uname").val(response.Uname)
+              $("#editFileName").val(response.file)
+              let path = "image/"+ response.file;
+              $("#editFileImage").attr("src", path)
+          
+              console.log(response);
             
-            }
-          });
+              $('#success_message').text(response.message);
+              $('#deleteModal').modal('hide');
+              
+              }
+            });
+        }
 
           
             $('#editDataForm').on('submit', function(e){
                 e.preventDefault();
+
+
                 var formData = new FormData(this);
 
 
@@ -192,27 +196,45 @@
 
             })
 
-            $.ajax({
-              type:"GET",
-              url: "/user" ,
-              headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-              dataType: "json",
-          success: function(response){
-            $("#id").val(response.id)
-            $("#name").val(response.fName)
-            $("#pass").val(response.pass)
-            $("#uname").val(response.Uname)
-            $("#editFileName").val(response.file)
-            let path = "image/"+ response.file;
-            $("#editFileImage").attr("src", path)
-        
-            console.log(response);
-           
-            $('#success_message').text(response.message);
-            $('#Changepass').modal('hide');
-            
-            }
-          });
+                   
+            $('#uPass').on('submit', function(e){
+                e.preventDefault();
+                const currentPassword =  $("#pass").val();
+                const enteredCurrent =  $("#cPass").val();
+                const password =  $("#nPass").val();
+                const confirmPassword =  $("#conPass").val();
+                
+                if(currentPassword !== enteredCurrent) {
+                  alert("Current Password Incorrect");
+                  return;
+                }
+
+                if(password != confirmPassword) {
+                  alert("Password and Confirm Password is  not Match!")
+                  return;
+                }
+
+                $.ajax({
+                    type:"POST",
+                    url: "/change-password" ,
+                    headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                    data: {
+                      password: password
+                    },
+                    dataType: "json",
+                    success: function(response){
+                      getUser();
+                      $('#Changepass').modal('hide');
+                      $("#cPass").val("");
+                      $("#nPass").val("");
+                      $("#conPass").val("");
+                  
+                  }
+                });
+
+            })
+
+
 
     </script>
 </body>
