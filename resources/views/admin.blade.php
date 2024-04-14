@@ -28,27 +28,27 @@
 
                     <div class="form-group mb-3">
                       <label for="student">Fullname:</label>
-                      <input type="text"  class="input form-control"  name="fName" id="fName" placeholder="Enter fullname">
+                      <input type="text"  class="input form-control"  name="fName" id="fName" placeholder="Enter fullname" required>
                   </div>
 
 
 
                     <div class="form-group mb-3">
                         <label for="student">Username:</label>
-                        <input type="text"  class="input form-control"  name="uName" id="uName" placeholder="Enter username">
+                        <input type="text"  class="input form-control"  name="uName" id="uName" placeholder="Enter username" required>
                     </div>
 
 
 
                     <div class="form-group mb-3">
                         <label for="student">Password:</label>
-                        <input type="password" class="input form-control"  name="pass" id="pass"placeholder="Enter password">
+                        <input type="password" class="input form-control"  name="pass" id="pass"placeholder="Enter password" required>
                     </div>
 
                     <div class="form-group mb-3 editImg" >
                       <img id="fileImage" class="img-thumbnail rounded-circle" style="width: 120px; height:120px; margin: auto;"/>
                       <label for="student">Insert avatar:</label>
-                      <input type="file" class="input form-control"  name="file" id="file"placeholder="Enter avatar">
+                      <input type="file" class="input form-control"  name="file" id="file"placeholder="Enter avatar" required>
                   </div>
 
 
@@ -73,7 +73,7 @@
   <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="editDataLabel">Edit Course</h1>
+            <h1 class="modal-title fs-5" id="editDataLabel">Update Admin</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <form  id="editDataForm">
@@ -83,26 +83,26 @@
 
             <div class="form-group mb-3">
               <label for="ID"></label>
-              <input type="hidden"  class="input form-control"  name="id" id="editid"  placeholder="Course ">
+              <input type="hidden"  class="input form-control"  name="id" id="editid"  placeholder="Course " required>
           </div>
 
             <div class="form-group mb-3">
               <label for="student">Fullname:</label>
-              <input type="text"  class="input form-control"  name="editfName" id="editfName" placeholder="Enter fullname">
+              <input type="text"  class="input form-control"  name="editfName" id="editfName" placeholder="Enter fullname" required>
           </div>
 
 
 
             <div class="form-group mb-3">
                 <label for="student">Username:</label>
-                <input type="text"  class="input form-control"  name="editUname" id="edituName" placeholder="Enter username">
+                <input type="text"  class="input form-control"  name="editUname" id="edituName" placeholder="Enter username" required>
             </div>
 
 
 
             <div class="form-group mb-3">
                 <label for="student">Password:</label>
-                <input type="password" class="input form-control"  name="editpass" id="editpass"placeholder="Enter password">
+                <input type="password" class="input form-control"  name="editpass" id="editpass"placeholder="Enter password" required>
             </div>
 
 
@@ -110,7 +110,7 @@
               <img id="editFileImage" class="img-thumbnail rounded-circle" style="width: 120px; height:120px; margin: auto;"/>
               <label for="student">Insert avatar:</label>
               <input type="hidden" id="editFileName" name="editfile" />
-              <input type="file" class="input form-control"  name="editfile" id="editfile"placeholder="Enter avatar">
+              <input type="file" class="input form-control"  name="editfile" id="editfile"placeholder="Enter avatar" required>
           </div>
 
 
@@ -195,10 +195,11 @@
                         <thead>
                           <tr>
                             <th data-field="id" data-sortable="true">Avatar</th>
-                                <th data-field="sname" data-sortable="true">Fullname</th>
-                                <th data-field="snumber" data-sortable="true">Username</th>
+                                <th data-field="sname" data-sortable="true">Full Name</th>
+                                <th data-field="snumber" data-sortable="true">User Name</th>
 
                                 <th data-field="Price" data-sortable="true">Action</th>
+
                           </tr>
                         </thead>
                         <tbody>
@@ -235,6 +236,8 @@
 
 
     </body>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
 
 
