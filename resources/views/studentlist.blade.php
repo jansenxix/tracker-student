@@ -26,33 +26,33 @@
             <div class="modal-body">
             
                     <div class="form-group mb-3">
-                        <label for="student">Firstname:</label>
-                        <input type="text"  class="input form-control"  name="fname" id="fname" placeholder="Enter student name">
+                        <label for="student">First Name:</label>
+                        <input type="text"  class="input form-control"  name="fname" id="fname" placeholder="Enter First Name" required>
                     </div>
 
                     <div class="form-group mb-3">
-                      <label for="student">Lastname:</label>
-                      <input type="text"  class="input form-control"  name="lname" id="lname" placeholder="Enter student surname">
+                      <label for="student">Last Name:</label>
+                      <input type="text"  class="input form-control"  name="lname" id="lname" placeholder="Enter Last Name" required>
                   </div>
   
                     
     
                     <div class="form-group mb-3">
-                        <label for="student">Student number</label>
-                        <input type="number" class="input form-control"  name="snumber" id="snumber"placeholder="Enter student number">
+                        <label for="student">Student Number</label>
+                        <input type="number" class="input form-control"  name="snumber" id="snumber"placeholder="Enter student Number" required>
                     </div>
     
                     
                     <div class="form-group mb-3 ">
                         <label for="student">Academic Year</label>
-                        <input type="text" class="input form-control" name="acadYear" id="acadYear" placeholder="Enter academic year">
+                        <input type="text" class="input form-control" name="acadYear" id="acadYear" placeholder="Enter Academic Year"required>
                     </div>
 
                     
 
                   <div class="form-group mb-3 ">
                     <label for="student">Academic Term</label>
-                    <input type="number" class="input form-control" name="acadTerm" id="acadTerm" placeholder="Enter academic term">
+                    <input type="number" class="input form-control" name="acadTerm" id="acadTerm" placeholder="Enter Academic Term" required>
                 </div>
 
                 <select class="form-select" aria-label="Default select example" id="course" name="course">
@@ -70,7 +70,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="submit"  name="save_data" class="btn btn-primary">Save Data</button>
+              <button type="submit"  name="save_data" class="btn btn-primary">Save</button>
             </div>
             </form>
           </div>
@@ -94,41 +94,41 @@
           
             <div class="form-group mb-3">
               <label for="ID"></label>
-              <input type="hidden"  class="input form-control"  name="id" id="editid"  placeholder="Student name">
+              <input type="hidden"  class="input form-control"  name="id" id="editid"  placeholder="Student name" required>
           </div>
   
   
                   <div class="form-group mb-3">
-                      <label for="Product">Student name</label>
-                      <input type="text"  class="input form-control"  name="editfname" id="editfname"  placeholder="Student name">
+                      <label for="Product">First Name</label>
+                      <input type="text"  class="input form-control"  name="editfname" id="editfname"  placeholder="Enter First Name:" required>
                   </div>
   
                   
                   <div class="form-group mb-3">
-                    <label for="Product">Student lname</label>
-                    <input type="text"  class="input form-control"  name="editlname" id="editlname"  placeholder="Student name">
+                    <label for="Product">Last Name</label>
+                    <input type="text"  class="input form-control"  name="editlname" id="editlname"  placeholder="Enter Last Name" required>
                 </div>
 
                   
   
                   <div class="form-group mb-3">
                       <label for="Product">Student number</label>
-                      <input type="number" class="input form-control"  name="snumber" id="editsnumber"  placeholder="Student number">
+                      <input type="number" class="input form-control"  name="snumber" id="editsnumber"  placeholder="Enter Student Number" required>
                   </div>
   
                   
                   <div class="form-group mb-3 ">
                     <label for="student">Academic Year</label>
-                    <input type="text" class="input form-control" name="acadYear" id="editacadYear" placeholder="Enter academic year">
+                    <input type="text" class="input form-control" name="acadYear" id="editacadYear" placeholder="Enter Academic Year" required>
                 </div>
 
                 
 
               <div class="form-group mb-3 ">
                 <label for="student">Academic Term</label>
-                <input type="number" class="input form-control" name="acadTerm" id="editacadTerm" placeholder="Enter academic term">
+                <input type="number" class="input form-control" name="acadTerm" id="editacadTerm" placeholder="Enter Academic Term">
             </div>
-            <select class="form-select" aria-label="Default select example" id="editcourse" name="editcourse">
+            <select class="form-select" aria-label="Default select example" id="editcourse" name="editcourse" required>
               <option selected>Open this select course</option>
               
               @foreach($courses as $value)
@@ -142,7 +142,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="submit"  name="edit_data" class="btn btn-primary ">Update Data</button>
+            <button type="submit"  name="edit_data" class="btn btn-primary ">Update</button>
           </div>
           </form>
         </div>
@@ -218,8 +218,8 @@
                         <thead>
                           <tr>
                             <th data-field="id" data-sortable="true">ID</th>
-                            <th data-field="sname" data-sortable="true">Firstname</th>
-                            <th data-field="sname" data-sortable="true">Lastname</th>
+                            <th data-field="sname" data-sortable="true">First Name</th>
+                            <th data-field="sname" data-sortable="true">Last Name</th>
                             <th data-field="snumber" data-sortable="true">Student Number</th>
                             <th data-field="age" data-sortable="true">Academic Year</th>
                             <th data-field="age" data-sortable="true">Academic Term</th>

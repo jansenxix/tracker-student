@@ -33,14 +33,14 @@
             
                     <div class="form-group mb-3">
                         <label for="student">CODE</label>
-                        <input type="text"  class="input form-control"  name="code" id="code" placeholder="Enter code">
+                        <input type="text"  class="input form-control"  name="code" id="code" placeholder="Enter code" required>
                     </div>
     
                     
     
                     <div class="form-group mb-3">
                         <label for="student">DESCRIPTION</label>
-                        <input type="text" class="input form-control"  name="description" id="description"placeholder="Enter description">
+                        <input type="text" class="input form-control"  name="description" id="description"placeholder="Enter description" required>
                     </div>
     
                   
@@ -65,7 +65,7 @@
   <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="editDataLabel">Edit Course</h1>
+            <h1 class="modal-title fs-5" id="editDataLabel">Update Course</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <form  id="editDataForm">
@@ -75,19 +75,19 @@
           
             <div class="form-group mb-3">
               <label for="ID"></label>
-              <input type="hidden"  class="input form-control"  name="id" id="editid"  placeholder="Course ">
+              <input type="hidden"  class="input form-control"  name="id" id="editid"  placeholder="Course" required>
           </div>
   
           <div class="form-group mb-3">
             <label for="student">CODE</label>
-            <input type="text"  class="input form-control"  name="editcode" id="editcode" placeholder="Enter code">
+            <input type="text"  class="input form-control"  name="editcode" id="editcode" placeholder="Enter code" required>
         </div>
 
         
 
         <div class="form-group mb-3">
             <label for="student">DESCRIPTION</label>
-            <input type="text" class="input form-control"  name="editdes" id="editdes"placeholder="Enter description">
+            <input type="text" class="input form-control"  name="editdes" id="editdes"placeholder="Enter description" required>
         </div>
   
   
