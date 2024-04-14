@@ -41,25 +41,28 @@
 
 
                     <div class="form-group mb-3">
-                        <label for="student">Student Number</label>
+                        <label for="student">Student Number:</label>
                         <input type="number" class="input form-control"  name="snumber" id="snumber"placeholder="Enter student Number" required>
                     </div>
 
 
                     <div class="form-group mb-3 ">
-                        <label for="student">Academic Year</label>
+                        <label for="student">Academic Year:</label>
                         <input type="text" class="input form-control" name="acadYear" id="acadYear" placeholder="Enter Academic Year"required>
                     </div>
 
 
-
                   <div class="form-group mb-3 ">
-                    <label for="student">Academic Term</label>
-                    <input type="number" class="input form-control" name="acadTerm" id="acadTerm" placeholder="Enter Academic Term" required>
+                    <label for="student">Academic Term:</label>
+                    <select class="form-select" aria-label="Default select example"  name="acadTerm" id="acadTerm"  placeholder="Enter Academic Term" required  >
+                     
+                      <option value="1">1st Term</option>
+                      <option value="2">2nd Term</option>
+                    </select>
                 </div>
 
                 <select class="form-select" aria-label="Default select example" id="course" name="course">
-                  <option selected>Open this select course</option>
+                  <option selected>Open this select course:</option>
 
                   @foreach($courses as $value)
                   <option value="{{ $value->id }}">{{ $value->description }}</option>
@@ -125,12 +128,16 @@
                     <input type="text" class="input form-control" name="acadYear" id="editacadYear" placeholder="Enter Academic Year" required>
                 </div>
 
+             
 
-
-              <div class="form-group mb-3 ">
-                <label for="student">Academic Term</label>
-                <input type="number" class="input form-control" name="acadTerm" id="editacadTerm" placeholder="Enter Academic Term">
-            </div>
+                <div class="form-group mb-3 ">
+                  <label for="student">Academic Term:</label>
+                  <select class="form-select" aria-label="Default select example"  name="editacadTerm" id="editacadTerm"  placeholder="Enter Academic Term" required  >
+                   
+                    <option value="1">1st Term</option>
+                    <option value="2">2nd Term</option>
+                  </select>
+              </div>
             <select class="form-select" aria-label="Default select example" id="editcourse" name="editcourse" required>
               <option selected>Open this select course</option>
 
