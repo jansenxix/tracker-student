@@ -1,9 +1,12 @@
 <div class="w3-teal" style="margin-bottom: 80px;background-color: #3a3a3a !important;opacity: 0.9;display: flex;">
     <button class="w3-button w3-teal w3-xlarge w3-hide-large" onclick="w3_open()" style="background-color: #3a3a3a !important; color: #6b0011;opacity: 0.9">&#9776;</button>
-    <div class="w3-container" style="background-color: #3a3a3a; font-weight: bolder; font-size: 40px; opacity: 0.9; padding: 10px">
+    <div class="w3-container w3-hide-small" style="background-color: #3a3a3a; font-weight: bolder; font-size: 40px; opacity: 0.9; padding: 10px">
         Tracer System
     </div>
-    <div style="right: 10px; position: absolute; padding: 10px;  cursor: pointer; z-index: 100000000"">
+    <div class="w3-container w3-hide-large" style="padding: 10px">
+        <img src="/image/logo.jpg" style="width: 50px;">
+    </div>
+    <div style="right: 10px; position: absolute; padding: 10px;  cursor: pointer; z-index: 100000000" ">
         <div class="w3-dropdown-hover" onmouseover="this.style.color='white'>
             <button class="w3-button w3-bar-item" style="background-color: #3a3a3a !important; color: white" ">
                 <img id="avatar" src="/image/logo.jpg" alt="Avatar" style="margin-right: 10px;vertical-align: middle; width: 50px; height: 50px; border-radius: 50%;">
