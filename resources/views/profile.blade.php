@@ -70,23 +70,6 @@
         @include('component.top')
 
         <div class="content">
-            <nav class="navbar navbar-expand-md navbar-light bg-light">
-                <div class="container-fluid">
-                    <div class="d-flex justify-content-between d-md-none d-block">
-                     <button class="btn px-1 py-0 open-btn me-2"><i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
-                      </svg></i></button>
-                        <a class="navbar-brand fs-4" href="#"><span class="bg-dark rounded px-2 py-0 text-white">Admin</span></a>
-
-                    </div>
-                    <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fal fa-bars"></i>
-                    </button>
-
-                </div>
-            </nav>
     <div class="container" style="padding-bottom: 10px">
         <div class="card card-outline card-primary">
             <div class="card-header">

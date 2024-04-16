@@ -15,7 +15,8 @@ class AdminController extends Controller
         $Admin->fName = $request->fName;
         $Admin->Uname = $request->uName;
         $Admin->pass = $request->pass;
-        $Admin->user_type = $request->userType;
+        if(isset($request->userType))
+            $Admin->user_type = $request->userType;
 
         if ($request->hasFile('file')) {
             $file = $request->file('file');
@@ -44,7 +45,10 @@ class AdminController extends Controller
         $Admin->Uname = $request->editUname;
         $Admin->file = $request->editfile;
         $Admin->pass = $request->editpass;
-        $Admin->user_type = $request->userType;
+
+        if(isset($request->userType))
+            $Admin->user_type = $request->userType;
+
         Log::info($request);
         if ($request->hasFile('editfile')) {
             $file = $request->file('editfile');
