@@ -94,40 +94,41 @@
               <div class="card-tools">
               </div>
             </div>
-
-            <form  id="editDataForm">
-                @csrf
-                {{method_field('POST')}}
-                    <input type="hidden" class="form-control" id="id" name="id" >
-                    <input type="hidden" class="form-control" id="pass" name="editpass" >
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Fullname:</label>
-                    <input type="text" class="form-control" id="name" name="editfName">
-                </div>
-
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Username:</label>
-                    <input type="text" class="form-control" id="uname" name="editUname">
-                </div>
-
-                <div class="form-group mb-3 editImg" >
-                    <img id="editFileImage" class="img-thumbnail rounded-circle" style="width: 120px; height:120px; margin: auto;"/>
-                    <label for="student">Change avatar:</label>
-                    <input type="hidden" id="editFileName" name="editfile" />
-                </div>
-                <div class="mb-3">
-                    <input type="file" class="input form-control"  name="editfile" id="editfile"placeholder="Enter avatar" style="width: 250px; margin: auto">
-                </div>
-            <div class="row">
-                <div class="col-lg-6">
-                <button type="submit" class="btn btn-success" style="margin-left: 400px; width: 150px;">Update</button>
-                </div>
-
-                <div class="col-lg-6">
-                    <button type="button" data-bs-target="#Changepass" data-bs-toggle="modal" class="btn btn-info">Change Password</button>
+            <div class="card-body">
+                <form  id="editDataForm">
+                    @csrf
+                    {{method_field('POST')}}
+                        <input type="hidden" class="form-control" id="id" name="id" >
+                        <input type="hidden" class="form-control" id="pass" name="editpass" >
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Fullname:</label>
+                        <input type="text" class="form-control" id="name" name="editfName">
                     </div>
+
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Username:</label>
+                        <input type="text" class="form-control" id="uname" name="editUname">
+                    </div>
+
+                    <div class="form-group mb-3 editImg" >
+                        <img id="editFileImage" class="img-thumbnail rounded-circle" style="width: 120px; height:120px; margin: auto;"/>
+                        <label for="student">Change avatar:</label>
+                        <input type="hidden" id="editFileName" name="editfile" />
+                    </div>
+                    <div class="mb-3">
+                        <input type="file" class="input form-control"  name="editfile" id="editfile"placeholder="Enter avatar" style="width: 250px; margin: auto">
+                    </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                    <button type="submit" class="btn btn-success" style="margin-left: 400px; width: 150px;">Update</button>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <button type="button" data-bs-target="#Changepass" data-bs-toggle="modal" class="btn btn-info">Change Password</button>
+                        </div>
+                </div>
+                </form>
             </div>
-            </form>
     </div>
 
     </div>
