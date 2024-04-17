@@ -46,6 +46,11 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
+Route::get('/testlogin', function () {
+    return view('testlogin');
+});
+
+
 
 
 Route::get('/studentlist', [StudentListController::class, 'studentlist']);
