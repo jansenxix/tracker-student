@@ -72,7 +72,7 @@
                                       <li class="prev">&#10094;</li>
                                       <li class="next">&#10095;</li>
                                       <li>
-                                        August<br>
+                                        April<br>
                                         <span style="font-size:18px">2024</span>
                                       </li>
                                     </ul>
@@ -99,13 +99,13 @@
                                     <li>8</li>
 
                                     <li>9</li>
-                                    <li><span class="active">10</span></li>
+                                    <li>10</li>
                                     <li>11</li>
                                     <li>12</li>
                                     <li>13</li>
                                     <li>14</li>
                                     <li>15</li>
-                                    <li>16</li>
+                                    <li><span class="active">16</span></li>
                                     <li>17</li>
                                     <li>18</li>
                                     <li>19</li>

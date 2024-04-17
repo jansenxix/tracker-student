@@ -61,7 +61,7 @@
 
     
     <div class="create" style="color:white; ">
-        Don't have an account? <a href="/userSignup"> &nbsp; <u>Sign up now!</u></a>
+        Don't have an account? <a href=""> &nbsp; <u>Sign up now!</u></a>
     </div>
 </div> <!-- *END CONTAINER -->
 

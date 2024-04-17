@@ -9,53 +9,62 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </head>
-<body>
-    <div class="container">
+<body style="font-weight:bold;">
+    <div class="container" style="padding-bottom: 10px">
 <br> <br>
  <div>
         <form action="POST" action="" id="signup">
         @csrf
-        <h3>Dear Graduate:</h3> <br>
-        <h4> 
+        <div class="card card-outline card-primary">
+          <div class="card-header" style="background-color:#3A3A3A;">
+            <h3 class="card-title"style="color:white;" >Dear Graduate</h3>
+            <div class="card-tools">
+            </div>
+          </div>
+        <h4  style="padding-left: 10px"> 
         Good day! Please complete this GTS questionnaire as accurately & frankly as possible by checking the box corresponding to your response. Your answer will be used for research purposes in order to assess graduate employability and eventually, improve course offerings of your alma mater & other universities/colleges in the Philippines. Your answers to this survey will be treated with strictest confidentiality.</h4>
  </div><br> <br>
   <div class="border border-secondary" style="margin-left:">
-   <div>
-    <h4 style="display: flex; justify-content: center;"><b>GRADUATE TRACER SURVEY (GTS)</b></h4> <br>
-    <h4><b>A. GENERAL INFORMATION</b></h4><br> 
-    <table  border="1">  
-        <tr>
-            <td>1. &nbsp;Name</td>
-            <td>2. &nbsp;Permanent address:</td>
-            <td>3. &nbsp;Email Address:</td>
-            <td>4. &nbsp;Telephone or Contact Number(s):</td>
-            <td>5. &nbsp;Mobile Number:</td>
-        </tr>
-        <tr>
-            <td><input type="text" name="name" id="name" placeholder="Enter name:"></td>
+    <div class="card card-outline card-primary">
+      <div class="card-header" style="background-color:#3A3A3A;">
+        <h3 class="card-title" style="color:white;">GRADUATE TRACER SURVEY (GTS)</h3>
+        <div class="card-tools">
+        </div>
+      </div>
+   <div style="padding-left: 10px" >
+           <h4 style="padding-left: 10px; text-align:center;"><b>A. GENERAL INFORMATION</b></h4><br> 
+            <table  border="1">  
+              <tr>
+                  <td>1.Name</td>
+                  <td>2.Permanent address:</td>
+                  <td>3.Email Address:</td>
+                  <td>4.Telephone or Contact Number(s):</td>
+                  <td>5.Mobile Number:</td>
+              </tr>
+              <tr>
+                  <td><input type="text" name="name" id="name" placeholder="Enter name:"></td>
 
-        <td> <input type="text" name="name" id="name" placeholder="Enter Address:"></td>
+              <td> <input type="text" name="name" id="name" placeholder="Enter Address:"></td>
 
-        <td><input type="text" name="name" id="name" placeholder="Enter email:"></td>
+              <td><input type="text" name="name" id="name" placeholder="Enter email:"></td>
 
 
-        <td><input type="text" name="name" id="name" placeholder="Enter contact number:"></td>
+              <td><input type="text" name="name" id="name" placeholder="Enter contact number:"></td>
 
-        
-        <td><input type="text" name="name" id="name" placeholder="Enter mobile number:"></td>  
-        </tr>
-    </table> 
+              
+              <td><input type="text" name="name" id="name" placeholder="Enter mobile number:"></td>  
+              </tr>
+            </table> 
 <br> <br>
-<table  border="1">
+            <table >
+
     <fieldset>
            <legend>6. &nbsp;Civil status:</legend>
      <tr>
                 <div>
                     <td>   <input type="checkbox" id="Single" name="Single" checked /> </td>
                     <td>  <label for="Single">Single</label></td>
-                </div>
-            
-                <div>
+               
                     <td>   <input type="checkbox" id="Married" name="Married" /></td>
                     <td>  <label for="horns">Married</label></td>
                 </div>
@@ -65,9 +74,7 @@
                 <div>
                     <td>  <input type="checkbox" id="Separated" name="Separated" /></td>
                     <td>     <label for="Separated">Separated</label></td>
-                </div>
-
-                <div>
+                
                     <td>  <input type="checkbox" id="sparent" name="sparent" /></td>
                     <td>  <label for="sparent">Single Parent</label></td>
                 </div>
@@ -84,110 +91,115 @@
 <br> <br>
 
 
-    <table class="gender" id="gender"  border="1">
-            <fieldset >
-                <legend>7. &nbsp;SEX:</legend>
-                <tr>
-                <div>
-                    <td>   <input type="checkbox" id="male" name="male" checked /> </td>
-                    <td>  <label for="Single">MALE</label></td>
-                </div>
-            
-                <div>
-                    <td>   <input type="checkbox" id="female" name="female" /></td>
-                    <td>  <label for="horns">FEMALE</label></td>
-                </div>
-            </fieldset>
-   </table> 
+          <table class="gender" id="gender"  border="1" style="padding-bottom: 10px">
+                  <fieldset >
+                      <legend>7. &nbsp;SEX:</legend>
+                      <tr>
+                      <div>
+                          <td>   <input type="checkbox" id="male" name="male" checked /> </td>
+                          <td>  <label for="Single">MALE</label></td>
+                      </div>
+                  
+                      <div>
+                          <td>   <input type="checkbox" id="female" name="female" /></td>
+                          <td>  <label for="horns">FEMALE</label></td>
+                      </div>
+                  </fieldset>
+          </table> 
 
 <br>
-                <div id="bday"  >
-                    <legend id="bday">8. &nbsp;BIRTHDAY:</legend>
-                    <input style="width:400px;  margin-left:27px;" type="date" id="bday" name="bday"/>
-                </div> 
-                <br>
-<table >
-             <div id="region" class="region" >
-                <div>
-                    <legend class="test">9. &nbsp;Region of origin:</legend>
-                 
-                        <label><input type="checkbox" name="region" value="Region 1"> Region 1</label><br>
-                        <label><input type="checkbox" name="region" value="Region 2"> Region 2</label><br>
-                        <label><input type="checkbox" name="region" value="Region 3"> Region 3</label><br>
-                        <label><input type="checkbox" name="region" value="Region 4"> Region 4</label><br>
-                </div>
-                
-                
-                <div style="margin-top: 45px; margin-inline-start: 20px; margin-left: -180px; ">
-                        <label><input type="checkbox" name="region" value="Region 5"> Region 5</label><br>
-                        <label><input type="checkbox" name="region" value="Region 6"> Region 6</label><br>
-                        <label><input type="checkbox" name="region" value="Region 7"> Region 7</label><br>
-                        <label><input type="checkbox" name="region" value="Region 8"> Region 8</label><br>
+          <div id="bday"  >
+              <legend id="bday">8. &nbsp;BIRTHDAY:</legend>
+              <input style="width:400px;  margin-left:27px;" type="date" id="bday" name="bday"/>
+              </div> 
+<br>
+          <table border="1" >
+          <div id="region" class="region">
+                  <div>
+                      <legend class="test">9. &nbsp;Region of origin:</legend>
+                  
+                          <label><input type="checkbox" name="region" value="Region 1"> Region 1</label><br>
+                          <label><input type="checkbox" name="region" value="Region 2"> Region 2</label><br>
+                          <label><input type="checkbox" name="region" value="Region 3"> Region 3</label><br>
+                          <label><input type="checkbox" name="region" value="Region 4"> Region 4</label><br>
+                  </div>
+                  
+                  
+                  <div style="margin-top: 45px; margin-inline-start: 20px; margin-left: -180px; ">
+                          <label><input type="checkbox" name="region" value="Region 5"> Region 5</label><br>
+                          <label><input type="checkbox" name="region" value="Region 6"> Region 6</label><br>
+                          <label><input type="checkbox" name="region" value="Region 7"> Region 7</label><br>
+                          <label><input type="checkbox" name="region" value="Region 8"> Region 8</label><br>
+
+                  </div>
+
+                  <div style="margin-top: 45px; margin-inline-start: 20px; ">
+                      <label><input type="checkbox" name="region" value="Region 5"> Region 9</label><br>
+                      <label><input type="checkbox" name="region" value="Region 6"> Region 10</label><br>
+                      <label><input type="checkbox" name="region" value="Region 7"> Region 11</label><br>
+                      <label><input type="checkbox" name="region" value="Region 8"> Region 12</label><br>
+                  </div>
+
+                  <div style=" margin-inline-start: 20px; margin-top: 45px; margin-right:30px;">
+                          <label><input type="checkbox" name="region9" value="Region 9"> Region 9</label><br>
+                          <label><input type="checkbox" name="regionNcr" value="NCR"> NCR</label><br>
+                          <label><input type="checkbox" name="regionCar" value="CAR"> CAR</label><br>
+                          <label><input type="checkbox" name="regionArmm" value="ARMM"> ARMM</label><br>
+                          <label><input type="checkbox" name="regionCaraga" value="CARAGA"> CARAGA</label><br>
+                  </div>
 
                 </div>
-
-                <div style="margin-top: 45px; margin-inline-start: 20px; ">
-                    <label><input type="checkbox" name="region" value="Region 5"> Region 9</label><br>
-                    <label><input type="checkbox" name="region" value="Region 6"> Region 10</label><br>
-                    <label><input type="checkbox" name="region" value="Region 7"> Region 11</label><br>
-                    <label><input type="checkbox" name="region" value="Region 8"> Region 12</label><br>
-
-               </div>
-
-                <div style=" margin-inline-start: 20px; margin-top: 45px; margin-right:30px;">
-                        <label><input type="checkbox" name="region9" value="Region 9"> Region 9</label><br>
-                        <label><input type="checkbox" name="regionNcr" value="NCR"> NCR</label><br>
-                        <label><input type="checkbox" name="regionCar" value="CAR"> CAR</label><br>
-                        <label><input type="checkbox" name="regionArmm" value="ARMM"> ARMM</label><br>
-                        <label><input type="checkbox" name="regionCaraga" value="CARAGA"> CARAGA</label><br>
-                </div>
+            </div> 
+          </table>
 
 
-            </div>
-
-
-     <div>
-    </table>
-             <table border="1">
+          <table border="1">
                 <tr>
                     <td> <legend>10. &nbsp;PROVINCE:</legend></td>
                 </tr>
+
                 <tr>
                   <td> <input type="text" id="province"   placeholder="Enter province" style="width: 400px; margin-left -20px;"></td>
                 </tr>
-            </table>
-    </div>
-        <br> <br>
-    <table class="gender" id="gender" border="1">
-        <fieldset >
-            <legend>11. &nbsp;LOCATION OF RESIDENSE:</legend>
-            <tr>
-            <div>
-                <td>   <input type="checkbox" id="city" name="city" checked /> </td>
-                <td>  <label for="Single">CITY</label></td>
-            </div>
+
+          </table>
+         </div>
+
+<br> <br>
+         <div  style="border=1;">
+          <table class="gender" id="gender" style="margin-left: 10px">
+            <fieldset >
+            <legend style="margin-left: 10px" >11. &nbsp;LOCATION OF RESIDENSE:</legend>
+              <tr>
+             <div>
+                  <td>   <input type="checkbox" id="city" name="city" checked /> </td>
+                  <td>  <label for="Single">CITY</label></td>
+              </tr>
+             </div>
         
-            <div>
-                <td>   <input type="checkbox" id="municipality" name="municipality" /></td>
-                <td>  <label for="horns">MUNICIPALITY</label></td>
+             <div>
+                    <td>   <input type="checkbox" id="municipality" name="municipality" /></td>
+                    <td>  <label for="horns">MUNICIPALITY</label></td>
             </div>
-        </fieldset>
-    </div>
-</table> 
-</div>
-<br>
-<br>
+           </fieldset>
+        
+          </table> 
+        </div>
 
 <h4><b> &nbsp;</b></h4> <br>
 </div>
 <br><br>
 
+<div class="border border-secondary" style="margin-left:">
+  <div class="card card-outline card-primary">
+    <div class="card-header" style="background-color:#3A3A3A;">
+      <h3 class="card-title" style="color:white;">B. &nbsp;EDUCATIONAL BACKGROUND</h3>
+      <div class="card-tools">
+      </div>
+    </div>
 <div class="container">
-    <div class="border border-secondary" style="margin-left:">
-<h4><b>B. &nbsp;EDUCATIONAL BACKGROUND</b></h4> <br>
-<legend>12. &nbsp;Educational Attainment (Baccalaureate Degree only):</legend>
-
-
+  <legend>12. &nbsp;Educational Attainment (Baccalaureate Degree only):</legend>
+   
 
 
 <table border="1" style="border-collapse: collapse; width: 100%;">
@@ -248,84 +260,84 @@
       </thead>
       <tbody >
           <tr>
-            <td class="text-left">High grades in the course or subject area(s)related to the course</td>
+            <td class="text-left">High grades in the course or subject area(s)related to the course:</td>
               <td><input type="checkbox"></td>
               <td><input type="checkbox"></td>
               
           </tr>
           <tr>
-            <td class="text-left">Good grades in high school</td>
+            <td class="text-left">Good grades in high school:</td>
               <td><input type="checkbox"></td>
               <td><input type="checkbox"></td>
              
           </tr>
           <tr>
-            <td  class="text-left">Influence of parents or relatives</td>
+            <td  class="text-left">Influence of parents or relatives:</td>
               <td><input type="checkbox"></td>
               <td><input type="checkbox"></td>
              
           </tr>
           <tr>
-            <td  class="text-left">Peer Influence</td>
+            <td  class="text-left">Peer Influence:</td>
               <td><input type="checkbox"></td>
               <td><input type="checkbox"></td>
              
           </tr>
           <tr>
-            <td  class="text-left">Inspired by a role model</td>
+            <td  class="text-left">Inspired by a role model:</td>
               <td><input type="checkbox"></td>
               <td><input type="checkbox"></td>
              
           </tr>
           <tr>
-            <td  class="text-left">Strong passion for the profession</td>
+            <td  class="text-left">Strong passion for the profession:</td>
               <td><input type="checkbox"></td>
               <td><input type="checkbox"></td>
             
           </tr>
           <tr>
-            <td  class="text-left">Prospect for immediate employment</td>
+            <td  class="text-left">Prospect for immediate employment:</td>
               <td><input type="checkbox"></td>
               <td><input type="checkbox"></td>
              
           </tr>
           <tr>
-            <td  class="text-left">Status or prestige of the profession</td>
+            <td  class="text-left">Status or prestige of the profession:</td>
               <td><input type="checkbox"></td>
               <td><input type="checkbox"></td>
              
           </tr>
           <tr>
-            <td  class="text-left">Availability of course offering in chosen institution</td>
+            <td  class="text-left">Availability of course offering in chosen institution:</td>
               <td><input type="checkbox"></td>
               <td><input type="checkbox"></td>
              
           </tr>
           <tr>
-            <td  class="text-left">Prospect of career advancement</td>
+            <td  class="text-left">Prospect of career advancement:</td>
               <td><input type="checkbox"></td>
               <td><input type="checkbox"></td>
              
           </tr>
           <tr>
-            <td  class="text-left">Affordable for the family</td>
+            <td  class="text-left">Affordable for the family:</td>
               <td><input type="checkbox"></td>
               <td><input type="checkbox"></td>
              
           </tr>
           <tr>
-            <td  class="text-left">Prospect of attractive compensation</td>
+            <td  class="text-left">Prospect of attractive compensation:</td>
               <td><input type="checkbox"></td>
               <td><input type="checkbox"></td>
             </tr>
             <tr>
-                <td  class="text-left">Opportunity for employment abroad</td>
+                <td  class="text-left">Opportunity for employment abroad:</td>
                  
                 </tr>
 
 
                 <tr>
-                    <td  class="text-left">No particular choice or no better idea</td>
+                    <td  class="text-left">No particular choice or no better idea:</td>
                       <td><input type="checkbox"></td>
                       <td><input type="checkbox"></td>
                     </tr>
@@ -353,11 +365,18 @@
 <br><br>
 <div class="container">
    
-    <div class="border border-secondary">
-<h4><b>C. &nbsp; TRAINING(S)/ADVANCE STUDIES ATTENDED AFTER COLLEGE</b></h4> <br>
+  <div class="border border-secondary" style="margin-left:">
+    <div class="card card-outline card-primary">
+      <div class="card-header" style="background-color:#3A3A3A;">
+        <h3 class="card-title" style="color:white;">C. &nbsp; TRAINING(S)/ADVANCE STUDIES ATTENDED AFTER COLLEGE</h3>
+        <div class="card-tools">
+      </div>
+    </div>
+  </div>
+</div>
 <legend>15a. &nbsp;Please list down all professional or work-related training program(s) including advance studies youhave attended after college. You may use extra sheet if needed.</legend>
-<br> <br>
-<table  border="1" >
+<br><br>
+      <table  border="1" >
     <tr>
         <th>Title of Training or Advance Study:</th>
         <th>Duration and Credits Earned:</th>
@@ -393,14 +412,18 @@
         </tr>
     </div>
 </table>
-<h4><b> &nbsp;</h4> 
-</div>
-</div>
+
+
 <br> <br>
-<div class="border border-secondary">
-<h4><b> &nbsp;D. EMPLOYMENT DATA</h4> 
-<div class="container">
-  <div>
+<div class="border border-secondary" style="margin-left:">
+  <div class="card card-outline card-primary">
+    <div class="card-header" style="background-color:#3A3A3A;">
+      <h3 class="card-title" style="color:white;">&nbsp;D. EMPLOYMENT DATA</h3>
+      <div class="card-tools">
+    </div>
+  </div>
+</div>
+</div>
     <table>
      <h3> 16. &nbsp;Are you presently employed?</h3>
     <tr>
@@ -909,8 +932,7 @@
          <h6> &nbsp;  &nbsp;&nbsp;  &nbsp;If NO, please proceed to Question 34.</h6>
       
      </table> <br> 
-</div>
-</div>
+
 <br><br>
 <div class="border border-secondary" style="margin-left:">
   <div class="container">
