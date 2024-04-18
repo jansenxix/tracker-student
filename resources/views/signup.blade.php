@@ -16,7 +16,7 @@
 <body style="background-image: url('css/background.jpeg">
 
 
-     
+
         <form action="POST" action="" id="signup">
             @csrf
             <div class="container">
@@ -36,10 +36,10 @@
 
 
 
-                <div class="text-input" style="margin-bottom: 20px;"> 
+                <div class="text-input" style="margin-bottom: 20px;">
                     <i class="ri-lock-fill"></i>
                     <input type="password" id="password" placeholder="Enter Password">
-                            
+
                     <div class="eye">
                             <span class="Eye" onclick="myFunction()">
                             <i id="hide1" style="display: none" class="ri-eye-line"></i>
@@ -47,7 +47,7 @@
                     </div>
                 </div>
                 <button type="submit" class="login-btn"id="btn">LOGIN</button>
-        
+
         <div class="create" style="color:white; ">
             Don't have an account? <a href="../signup/signup.php"> &nbsp; <u>Sign up now!</u></a>
         </div>
@@ -55,13 +55,13 @@
             <a href="#" class="forgot" style="color:white;">Forgot password?</a>
         </div>
 
-   
 
- 
 
-    
+
+
+
     <div class="create" style="color:white; ">
-        Don't have an account? <a href=""> &nbsp; <u>Sign up now!</u></a>
+        Don't have an account? <a href="/userSignup"> &nbsp; <u>Sign up now!</u></a>
     </div>
 </div> <!-- *END CONTAINER -->
 
@@ -79,14 +79,16 @@
 
 
 
-             
+
             $.ajax({
                 type: "POST",
                 url: "/signup",
                 headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                 data:{Uname: username, pass:pass},
+                dataType: "json",
                 success: function (response) {
-                    if (response === 'Success') {
+                    if (response.message === 'Success') {
+                        localStorage.setItem("user", JSON.stringify(response.user))
                         window.location.href = "/dashboard";
                     } else {
                         alert("Login failed: " + response.message);
@@ -97,7 +99,7 @@
     });
 
 
-       
+
     function myFunction()
 {
         var x = document.getElementById("password");

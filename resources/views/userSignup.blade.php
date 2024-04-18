@@ -31,16 +31,16 @@
                 </svg>
                 <input type="text" class="form-control"  id="fname" name="fname" placeholder="Enter First Name:" required size="50 px">
               </div>
-               
-              
-              <div class="text-input" style="margin-bottom: 5px;"> 
+
+
+              <div class="text-input" style="margin-bottom: 5px;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                   <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
                 </svg>
                 <input type="text" id="lname" name="lname" placeholder="Enter Last Name">
               </div>
 
-              <div class="text-input" style="margin-bottom: 20px;"> 
+              <div class="text-input" style="margin-bottom: 20px;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                   <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
                 </svg>
@@ -50,14 +50,14 @@
 
                <button type="submit" id="btn" class="btn btn-primary login-btn">Submit</button>
                <div class="create" style="color:white;">
-                Have an account already?&nbsp; <a href="/logout">Login now!</a>
+                Have an account already?&nbsp; <a href="/">Login now!</a>
                 </div>
 
-              
+
         </div>
       </div>
     </div> <!-- *END CONTAINER -->
-   
+
 
 {{-- test --}}
 
@@ -67,7 +67,7 @@
 <script>
 
 
- 
+
 
   $('#userSignup').on('submit', function(e){
     e.preventDefault();
@@ -75,10 +75,10 @@
    var fname = $('#fname').val();
    var lname = $('#lname').val();
    var snumber = $('#snumber').val();
-  
+
     $.ajax({
     type:"POST",
-    url: "/usersignUp",
+    url: "/checkStudent",
     headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
     data:{fname: fname, lname: lname,snumber:snumber},
     dataType: "json",
@@ -87,7 +87,7 @@
         if(response.message == 'Success')
         {
 
-          location.href = "/";
+          location.href = "/form";
         }
         else
         {

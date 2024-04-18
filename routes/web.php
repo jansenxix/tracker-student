@@ -67,7 +67,7 @@ Route::post('/updatecourse', [AdminController::class, 'update']);
 Route::post('/deleteadmin', [AdminController::class, 'delete']);
 Route::post('/signup', [SignupController::class, 'store']);
 
-Route::post('/usersignUp', [UserSignupController::class, 'store']);
+Route::post('/checkStudent', [UserSignupController::class, 'store']);
 Route::get('/user', [ProfileController::class, 'getUserLogin']);
 Route::post('/change-password',  [ProfileController::class, 'changePass']);
 
@@ -78,3 +78,7 @@ Route::post('/post', [PostController::class, 'post']);
 Route::get('/posts', [PostController::class, 'posts']);
 
 Route::post('/comment', [CommentController::class, 'comment']);
+
+Route::post('/createStudent', function (\Illuminate\Http\Request $request) {
+    \Illuminate\Support\Facades\Log::info(json_encode($request->all()));
+});

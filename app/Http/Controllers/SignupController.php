@@ -10,16 +10,21 @@ use Illuminate\Support\Facades\Auth;
 
 class SignupController extends Controller
 {
-    
+
     public function store(Request $request)
     {
         $user = admin::where('Uname', $request['Uname'])->first();
 
         if ($user && $user->pass == $request['pass']) {
             Auth::login($user);
-            return "Success";
+            return response()->json([
+                "message" => "Success",
+                "user" => $user
+            ]);
         }
 
-        return "Failed";
+        return response()->json([
+            "message" => "Incorrect Credential",
+        ]);
     }
 }
