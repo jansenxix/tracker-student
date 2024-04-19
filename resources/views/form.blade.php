@@ -841,24 +841,24 @@
                 <h4>29.How long did it take to land your first job?:</h4>
 
 
-                <label><input type="checkbox"> Less than a month</label><br>
-                <label><input type="checkbox"> 1 to 6 months</label><br>
-                <label><input type="checkbox"> 7 to 11 months</label><br>
+                <label><input type="radio" name="d[how_long_did_it_take]" value="Less than a month"> Less than a month</label><br>
+                <label><input type="radio" name="d[how_long_did_it_take]" value="1 to 6 months"> 1 to 6 months</label><br>
+                <label><input type="radio" name="d[how_long_did_it_take]" value="7 to 11 months"> 7 to 11 months</label><br>
 
             </div>
 
 
             <div style="margin-top: 45px; margin-inline-start: 20px; margin-left: -180px; ">
-                <label><input type="checkbox"> 1 year to less than 2 years</label><br>
-                <label><input type="checkbox"> 2 years to less than 3 years</label><br>
-                <label><input type="checkbox"> 3 years to less than 4 years</label><br>
+                <label><input type="radio" name="d[how_long_did_it_take]" value="1 year to less than 2 years"> 1 year to less than 2 years</label><br>
+                <label><input type="radio" name="d[how_long_did_it_take]" value="2 years to less than 3 years"> 2 years to less than 3 years</label><br>
+                <label><input type="radio" name="d[how_long_did_it_take]" value="3 years to less than 4 years"> 3 years to less than 4 years</label><br>
 
 
             </div>
 
             <div style="margin-top: 45px; margin-inline-start: 20px; ">
-                <label><input type="checkbox"> Others, please specify</label>
-                <input type="text" size="50" placeholder="Please specify">
+                <label><input type="radio" name="d[how_long_did_it_take]" value="Others, please specify"> Others, please specify</label>
+                <input type="text" size="50" placeholder="Please specify" name="d[how_long_did_it_take_remarks]">
 
 
             </div>
@@ -878,26 +878,24 @@
         <tbody>
         <tr>
             <td class="text-left">Rank or Clerical</td>
-            <td><input type="checkbox"></td>
-            <td><input type="checkbox"></td>
+            <td><input type="radio" name="d[rank_q1]" value="yes"></td>
+            <td><input type="radio" name="d[rank_q1]" value="no"></td>
         </tr>
         <tr>
             <td class="text-left">Professional, Technical or Supervisory</td>
-            <td><input type="checkbox"></td>
-            <td><input type="checkbox"></td>
+            <td><input type="radio" name="d[rank_q2]" value="yes"></td>
+            <td><input type="radio" name="d[rank_q2]" value="no"></td>
         </tr>
         <tr>
             <td class="text-left">Managerial or Executive</td>
-            <td><input type="checkbox"></td>
-            <td><input type="checkbox"></td>
+            <td><input type="radio" name="d[rank_q3]" value="yes"></td>
+            <td><input type="radio" name="d[rank_q3]" value="no"></td>
         </tr>
         <tr>
             <td class="text-left">Self-employed</td>
-            <td><input type="checkbox"></td>
-            <td><input type="checkbox"></td>
+            <td><input type="radio" name="d[rank_q4]" value="yes"></td>
+            <td><input type="radio" name="d[rank_q4]" value="no"></td>
         </tr>
-
-
 </div>
 </table>
 <br> <br>
@@ -909,17 +907,17 @@
             <h4>31.What is your initial gross monthly earning in your first job after college?:</h4>
 
 
-            <label><input type="checkbox"> Below P5,000.00</label><br>
-            <label><input type="checkbox"> P5,000.00 to less than P10,000.00</label><br>
-            <label><input type="checkbox"> P10,000.00 to less than P15,000.00</label><br>
+            <label><input type="radio" name="d[monthly_earning]" value="Below P5,000.00"> Below P5,000.00</label><br>
+            <label><input type="radio" name="d[monthly_earning]" value="P5,000.00 to less than P10,000.00"> P5,000.00 to less than P10,000.00</label><br>
+            <label><input type="radio" name="d[monthly_earning]" value="P10,000.00 to less than P15,000.00"> P10,000.00 to less than P15,000.00</label><br>
 
         </div>
 
 
         <div style="margin-top: 45px; margin-inline-start: 20px; margin-left: -180px; ">
-            <label><input type="checkbox"> P15,000.00 to less than P20,000.00</label><br>
-            <label><input type="checkbox"> P 20,000.00 to less than P25,000.00</label><br>
-            <label><input type="checkbox"> P 25,000.00 and above</label><br>
+            <label><input type="radio" name="d[monthly_earning]" value="P15,000.00 to less than P20,000.00"> P15,000.00 to less than P20,000.00</label><br>
+            <label><input type="radio" name="d[monthly_earning]" value="P20,000.00 to less than P25,000.00"> P20,000.00 to less than P25,000.00</label><br>
+            <label><input type="radio" name="d[monthly_earning]" value="P25,000.00 and above"> P25,000.00 and above</label><br>
 
 
         </div>
@@ -927,40 +925,32 @@
 
     </div>
 </table>
-
-<table>
+<div class="container">
     <h4> 32. Was the curriculum you had in college relevant to your first job?</h4>
-
-    &nbsp; &nbsp; &nbsp; <input type="checkbox">
-    <label for="Local">&nbsp; Yes</label>
-    &nbsp;
-    <input type="checkbox">
-    <label for="Local"> &nbsp;No</label>
-    <h6> &nbsp; &nbsp;&nbsp; &nbsp;If NO, please proceed to Question 34.</h6>
-
+<table>
+    <tr>
+        <td>
+            <label for="Local">&nbsp; Yes</label>
+        </td>
+        <td>
+            <input type="radio" name="d[curriculum_relevant_job]" value="yes">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="Local">&nbsp; No</label>
+        </td>
+        <td>
+            <input type="radio" name="d[curriculum_relevant_job]" value="no">
+        </td>
+    </tr>
 </table>
+</div>
 <br>
 
 <br><br>
-<div class="border border-secondary" style="margin-left:">
+<div class="" style="margin-left:">
     <div class="container">
-        <table>
-            <thead>
-
-            <tr>
-                <th>Institution Code</th>
-                <th>Control code</th>
-
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td><input type="text" placeholder="Enter Institution Code"></td>
-                <td><input type="text" placeholder="Enter Control code "></td>
-            </tr>
-            </tbody>
-        </table>
-        <br>
         <table>
             <h4> 33. if YES, what competencies learned in college did you find very useful in you first job? You
                 maycheck ()more than one answer.</h4>
