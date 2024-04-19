@@ -50,7 +50,7 @@
                                 <td>5.Mobile Number:</td>
                             </tr>
                             <tr>
-                                <td><input type="text"  name="a[name]" placeholder="Enter name:"></td>
+                                <td style="padding: 10px"><input type="text"  name="a[name]" placeholder="Enter name:"></td>
 
                                 <td><input type="text"  name="a[address]" placeholder="Enter Address:"></td>
 
@@ -119,7 +119,6 @@
                             <input style="width:400px;  margin-left:27px;" type="date" id="bday" name="a[bday]"/>
                         </div>
                         <br>
-                        <table border="1">
                             <div id="region" class="region">
                                 <div>
                                     <legend class="test">9. &nbsp;Region of origin:</legend>
@@ -156,9 +155,8 @@
 
                             </div>
                     </div>
-                    </table>
 
-
+                    <div class="container">
                     <table border="1">
                         <tr>
                             <td>
@@ -167,7 +165,7 @@
                         </tr>
 
                         <tr>
-                            <td><input type="text" id="province" name="a[province]" placeholder="Enter province"
+                            <td style="padding: 10px"><input type="text" id="province" name="a[province]" placeholder="Enter province"
                                        style="width: 400px; margin-left -20px;"></td>
                         </tr>
 
@@ -219,7 +217,7 @@
 
                     </tr>
                     <tr>
-                        <td><input type="text" name="b[degree]" placeholder="Enter degree"></td>
+                        <td style="padding: 10px"><input type="text" name="b[degree]" placeholder="Enter degree"></td>
                         <td><input type="text" name="b[university]" placeholder="College or University"></td>
                         <td><input type="text" name="b[year]" placeholder="Year Graduated"></td>
                         <td><input type="text" name="b[honor]" placeholder="Honor or Award"></td>
@@ -242,7 +240,7 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td><input type="text" name="b[institution_code]" placeholder="Enter Institution Code"></td>
+                        <td style="padding: 10px"><input type="text" name="b[institution_code]" placeholder="Enter Institution Code"></td>
                         <td><input type="text" name="b[control_code]" placeholder="Enter Control code "></td>
                         <td><input type="text" name="b[name_examination]" placeholder="Name of Examination"></td>
                         <td><input type="date" name="b[date_taken]" placeholder="Enter Date Taken "></td>
@@ -366,7 +364,7 @@
                     <th>Institution/College/University:</th>
                 </tr>
                 <tr>
-                    <td><input type="text" name="b[trainingTitle]" placeholder="Enter Title of Training or Advance Study">
+                    <td style="padding: 10px"><input type="text" name="b[trainingTitle]" placeholder="Enter Title of Training or Advance Study">
                     </td>
                     <td><input type="text" name="b[trainingDuration]" placeholder="Enter Duration and Credits Earned"></td>
                     <td><input type="text" name="b[trainingName]" placeholder="Enter Name of Training"></td>
@@ -400,7 +398,7 @@
 
                 </tr>
                 <tr>
-                    <td><input type="text" name="c[trainingTitle]" placeholder="Enter Title of Training or Advance Study">
+                    <td style="padding: 10px"><input type="text" name="c[trainingTitle]" placeholder="Enter Title of Training or Advance Study">
                     </td>
                     <td><input type="text" name="c[trainingDuration]" placeholder="Enter Duration and Credits Earned:">
                     </td>
@@ -464,7 +462,7 @@
         <h3> &nbsp; If YES, proceed to Questions 18 to 22.</h3>
     </div>
     <br><br>
-    <div>
+    <div class="container">
         <table>
             <div id="region" class="region">
                 <div>
@@ -491,22 +489,8 @@
                 </div>
         </table>
     </div>
-
-    <br><br>
-    <table border="1">
-
-        <tr>
-            <th>Institution Code:</th>
-            <th>Control code:</th>
-
-        </tr>
-        <tr>
-            <td><input type="text" name="d[trainingTitle]" placeholder="Institution Code:"></td>
-            <td><input type="text" name="d[trainingDuration]" placeholder="Control code:"></td>
-
-        </tr>
-    </table>
     <br>
+        <div class="container">
     <table>
         <div id="region" class="region">
             <div>
@@ -527,7 +511,7 @@
                 <label><input type="radio" name="d[present_employment_status]" value="Self-employed"> Self-employed</label><br>
             </div>
     </table>
-
+        </div>
     <div>
         &nbsp;&nbsp; <label for="">If self-employed, what skills acquired in college were you able to apply in your
             work?</label><br>
@@ -714,6 +698,7 @@
         </div>
     </div>
     <br>
+        <div class="container">
     <table>
         <h4> 24. What were your reasons for accepting the job? You may check () more than one answer..</h4>
 
@@ -776,7 +761,6 @@
 
         </tr>
     </table>
-
     <br>
     <table>
         <div id="region" class="region">
@@ -864,6 +848,7 @@
             </div>
         </div>
     </table>
+        </div>
     <h4> &nbsp; 30.Job Level Position.</h4>
 
 
@@ -896,13 +881,11 @@
             <td><input type="radio" name="d[rank_q4]" value="yes"></td>
             <td><input type="radio" name="d[rank_q4]" value="no"></td>
         </tr>
-</div>
 </table>
 <br> <br>
 
 
-<table>
-    <div id="region" class="region">
+    <div id="region" class="region container">
         <div>
             <h4>31.What is your initial gross monthly earning in your first job after college?:</h4>
 
@@ -924,7 +907,6 @@
 
 
     </div>
-</table>
 <div class="container">
     <h4> 32. Was the curriculum you had in college relevant to your first job?</h4>
 <table>
@@ -957,37 +939,37 @@
 
 
             <tr>
-                <td><input type="checkbox"></td>
+                <td><input type="checkbox" name="d[yes_useful_op1]"></td>
                 <td class="text-left"> Communication skills</td>
             </tr>
 
             <tr>
-                <td><input type="checkbox"></td>
+                <td><input type="checkbox" name="d[yes_useful_op2]"></td>
                 <td class="text-left"> Human Relations skills</td>
             </tr>
 
             <tr>
-                <td><input type="checkbox"></td>
+                <td><input type="checkbox" name="d[yes_useful_op3]"></td>
                 <td class="text-left">Entrepreneurial skills</td>
             </tr>
 
             <tr>
-                <td><input type="checkbox"></td>
+                <td><input type="checkbox" name="d[yes_useful_op4]"></td>
                 <td class="text-left">Information Technology skills</td>
             </tr>
 
             <tr>
-                <td><input type="checkbox"></td>
+                <td><input type="checkbox" name="d[yes_useful_op5]"></td>
                 <td class="text-left">Problem-solving skills</td>
             </tr>
 
             <tr>
-                <td><input type="checkbox"></td>
+                <td><input type="checkbox" name="d[yes_useful_op6]"></td>
                 <td class="text-left"> Critical Thinking skills</td>
             </tr>
 
             <tr>
-                <td><input type="checkbox"></td>
+                <td><input type="checkbox" name="d[yes_useful_op7]"></td>
                 <td class="text-left"> Other skills, please specify</td>
             </tr>
         </table>
@@ -995,7 +977,7 @@
 
         <div>
             <h4> 34. List down suggestions to further improve your course curriculum.</h4>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; <input type="text" placeholder="List down the suggestions.." size="50"
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; <input type="text" name="d[curriculum_suggestion]" placeholder="List down the suggestions.." size="50"
                                                          style="height: 70px;">
         </div>
         <br> <br>
@@ -1008,25 +990,13 @@
                 contactnumbers. Their participation will also be needed to make this study more meaningful and
                 useful.</h5>
             <br>
-            <tr>
-                <th>Name</th>
-                <th>Full Address</th>
-                <th>Contact Number</th>
-
-            </tr>
-            <tr>
-                <td><input type="text" name="trainingTitle" placeholder="Enter Name" style="height: 70px;"></td>
-                <td><input type="text" name="trainingDuration" placeholder="Enter Full Address" style="height: 70px;">
-                </td>
-                <td><input type="text" name="trainingName" placeholder="Enter Contact Number" style="height: 70px;">
-                </td>
-
-            </tr>
             <!-- You can repeat the above tr for as many entries as needed -->
         </table>
     </div>
 </div>
-    <button type="submit">submit</button>
+    <div style="text-align: right; padding: 10px">
+        <button type="submit" class="btn btn-secondary">SUBMIT</button>
+    </div>
 </form>
 </body>
 </html>

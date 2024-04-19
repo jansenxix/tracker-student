@@ -22,15 +22,15 @@ input {
 }
 
 fieldset{
-   
-   
+
+
     align-items:start;
     margin-inline-start: auto;
 }
 .gender{
     width: 25%;
-  
-   
+
+
 }
 .start {
     display: block;
@@ -38,7 +38,7 @@ fieldset{
       1rem 'Fira Sans',
       sans-serif;
   }
-  
+
   .bday,
   label {
     margin: 0.4rem 0;
@@ -49,7 +49,6 @@ fieldset{
   .region{
     display: flex;
     justify-content: flex-start;
-    margin-inline-start: 20px;
   }
  #centerTable{
   text-align: center;
