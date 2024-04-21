@@ -264,6 +264,11 @@
                             $("#loading-content").html("Nothing More")
                         }
 
+                        $(".post-view").on("click", function () {
+                            const id  = $(this).attr("data-id")
+                            location.href = "/post/"+id
+                        })
+
                         $(".comment").on("click", function () {
                             const id = $(this).attr("data-id")
                             const description = $("#description"+id).val()
@@ -283,7 +288,8 @@
                                     description
                                 },
                                 success: function (response) {
-                                    getPosts()
+                                    alert("Comment Successfully!")
+                                    location.href = "/post/"+id
                                 }
                             })
                         })
@@ -306,7 +312,7 @@
                                     </svg>`
                 }
 
-                return `<div class="col-lg-12 post-view" style="padding-top: 10px">
+                return `<div class="col-lg-12" style="padding-top: 10px">
     <div class="card">
  <div class="card-body">
         <div class="mt-3 mb-2">
@@ -321,7 +327,7 @@
                        ${new Date(post.created_at).toLocaleString()}
                 </div>
             </div>
-            <p class="card-text">${post.description}</p>
+            <p class="card-text post-view" data-id="${ post.id }" style="cursor: pointer">${post.description}</p>
         </div>
 
         <div class="row">

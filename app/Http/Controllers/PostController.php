@@ -7,6 +7,7 @@ use App\Models\admin;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class PostController extends Controller
 {
@@ -49,5 +50,21 @@ class PostController extends Controller
         }
 
         return $posts;
+    }
+
+    public function getPost($id)
+    {
+        $post = Post::with("comments")->find($id);
+
+        $admin = admin::find($post->admin_id);
+        $post->admin = $admin;
+
+        foreach ($post->comments as $comment)
+        {
+            $user = admin::find($comment->admin_id);
+            $comment->admin = $user;
+        }
+
+        return response()->json(["post" => $post]);
     }
 }

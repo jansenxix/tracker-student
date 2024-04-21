@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string("Uname");
             $table->string("pass");
             $table->string("file");
+            $table->json("data")->nullable();
+            $table->smallInteger("student_id")->nullable();
             $table->timestamps();
         });
     }

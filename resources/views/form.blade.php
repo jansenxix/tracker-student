@@ -14,6 +14,7 @@
 </head>
 <body style="font-weight:bold;">
 <form action="/createStudent" method="post" id="signup">
+    <input type="hidden" name="id" value="{{ $id }}">
 <div class="container" style="padding-bottom: 10px">
     <br> <br>
     <div>
@@ -57,10 +58,10 @@
                                 <td><input type="text"  name="a[email]" placeholder="Enter email:"></td>
 
 
-                                <td><input type="text"  name="a[contact]" placeholder="Enter contact number:"></td>
+                                <td><input type="text"  name="a[phone_number]" placeholder="Enter contact number:"></td>
 
 
-                                <td><input type="text" name="name" id="a[number]" placeholder="Enter mobile number:"></td>
+                                <td><input type="text" id="a[contact_number]" placeholder="Enter mobile number:"></td>
                             </tr>
                         </table>
                         <br> <br>
@@ -179,7 +180,7 @@
                             <legend style="margin-left: 10px">11. &nbsp;LOCATION OF RESIDENSE:</legend>
                             <tr>
                                 <div>
-                                    <td><input type="radio" id="city" name="a[city]" value="city" checked/></td>
+                                    <td><input type="radio" id="city" name="a[location_residense]" value="city" checked/></td>
                                     <td><label for="Single">CITY</label></td>
                             </tr>
                 </div>
@@ -269,87 +270,86 @@
                     <tbody>
                     <tr>
                         <td class="text-left">High grades in the course or subject area(s)related to the course:</td>
-                        <td><input type="radio" name="b[q1]" value="0"></td>
-                        <td><input type="radio" name="b[q1]" value="1"></td>
+                        <td><input type="radio" name="b[reason_q1]" value="0"></td>
+                        <td><input type="radio" name="b[reason_q1]" value="1"></td>
 
                     </tr>
                     <tr>
                         <td class="text-left">Good grades in high school:</td>
-                        <td><input type="radio" name="b[q2]" value="0"></td>
-                        <td><input type="radio" name="b[q2]" value="1"></td>
+                        <td><input type="radio" name="b[reason_q2]" value="0"></td>
+                        <td><input type="radio" name="b[reason_q2]" value="1"></td>
 
                     </tr>
                     <tr>
                         <td class="text-left">Influence of parents or relatives:</td>
-                        <td><input type="radio" name="b[q3]" value="0"></td>
-                        <td><input type="radio" name="b[q3]" value="1"></td>
+                        <td><input type="radio" name="b[reason_q3]" value="0"></td>
+                        <td><input type="radio" name="b[reason_q3]" value="1"></td>
 
                     </tr>
                     <tr>
                         <td class="text-left">Peer Influence:</td>
-                        <td><input type="radio" name="b[q4]" value="0"></td>
-                        <td><input type="radio" name="b[q4]" value="1"></td>
+                        <td><input type="radio" name="b[reason_q4]" value="0"></td>
+                        <td><input type="radio" name="b[reason_q4]" value="1"></td>
 
                     </tr>
                     <tr>
                         <td class="text-left">Inspired by a role model:</td>
-                        <td><input type="radio" name="b[q5]" value="0"></td>
-                        <td><input type="radio" name="b[q5]" value="1"></td>
+                        <td><input type="radio" name="b[reason_q5]" value="0"></td>
+                        <td><input type="radio" name="b[reason_q5]" value="1"></td>
 
                     </tr>
                     <tr>
                         <td class="text-left">Strong passion for the profession:</td>
-                        <td><input type="radio" name="b[q6]" value="0"></td>
-                        <td><input type="radio" name="b[q6]" value="1"></td>
+                        <td><input type="radio" name="b[reason_q6]" value="0"></td>
+                        <td><input type="radio" name="b[reason_q6]" value="1"></td>
 
                     </tr>
                     <tr>
                         <td class="text-left">Prospect for immediate employment:</td>
-                        <td><input type="radio" name="b[q7]" value="0"></td>
-                        <td><input type="radio" name="b[q7]" value="1"></td>
-
+                        <td><input type="radio" name="b[reason_q7]" value="0"></td>
+                        <td><input type="radio" name="b[reason_q7]" value="1"></td>
                     </tr>
                     <tr>
                         <td class="text-left">Status or prestige of the profession:</td>
-                        <td><input type="radio" name="b[q8]" value="0"></td>
-                        <td><input type="radio" name="b[q8]" value="1"></td>
+                        <td><input type="radio" name="b[reason_q8]" value="0"></td>
+                        <td><input type="radio" name="b[reason_q8]" value="1"></td>
 
                     </tr>
                     <tr>
                         <td class="text-left">Availability of course offering in chosen institution:</td>
-                        <td><input type="radio" name="b[q9]" value="0"></td>
-                        <td><input type="radio" name="b[q9]" value="1"></td>
+                        <td><input type="radio" name="b[reason_q9]" value="0"></td>
+                        <td><input type="radio" name="b[reason_q9]" value="1"></td>
 
                     </tr>
                     <tr>
                         <td class="text-left">Prospect of career advancement:</td>
-                        <td><input type="radio" name="b[q10]" value="0"></td>
-                        <td><input type="radio" name="b[q10]" value="1"></td>
+                        <td><input type="radio" name="b[reason_q10]" value="0"></td>
+                        <td><input type="radio" name="b[reason_q10]" value="1"></td>
 
                     </tr>
                     <tr>
                         <td class="text-left">Affordable for the family:</td>
-                        <td><input type="radio" name="b[q11]" value="0"></td>
-                        <td><input type="radio" name="b[q11]" value="1"></td>
+                        <td><input type="radio" name="b[reason_q11]" value="0"></td>
+                        <td><input type="radio" name="b[reason_q11]" value="1"></td>
 
                     </tr>
                     <tr>
                         <td class="text-left">Prospect of attractive compensation:</td>
-                        <td><input type="radio" name="b[q12]" value="0"></td>
-                        <td><input type="radio" name="b[q12]" value="1"></td>
+                        <td><input type="radio" name="b[reason_q12]" value="0"></td>
+                        <td><input type="radio" name="b[reason_q12]" value="1"></td>
                     </tr>
                     <tr>
                         <td class="text-left">Opportunity for employment abroad:</td>
-                        <td><input type="radio" name="b[q13]" value="0"></td>
-                        <td><input type="radio" name="b[q13]" value="1"></td>
+                        <td><input type="radio" name="b[reason_q13]" value="0"></td>
+                        <td><input type="radio" name="b[reason_q13]" value="1"></td>
 
                     </tr>
 
 
                     <tr>
                         <td class="text-left">No particular choice or no better idea:</td>
-                        <td><input type="radio" name="b[q14]" value="0"></td>
-                        <td><input type="radio" name="b[q14]" value="1"></td>
+                        <td><input type="radio" name="b[reason_q14]" value="0"></td>
+                        <td><input type="radio" name="b[reason_q14]" value="1"></td>
                     </tr>
             </div>
             </table>
@@ -471,10 +471,10 @@
                         :
                     </legend>
 
-                    <label><input type="checkbox" name="d[option_1]"> Advance or further study</label><br>
-                    <label><input type="checkbox" name="d[option_2]"> Family concern and decided not to find a job</label><br>
-                    <label><input type="checkbox" name="d[option_3]"> Health-related reason(s)</label><br>
-                    <label><input type="checkbox" name="d[option_4]"> Lack of work experience</label><br>
+                    <label><input type="checkbox" name="d[reason_no_work_op1]"> Advance or further study</label><br>
+                    <label><input type="checkbox" name="d[reason_no_work_op2]"> Family concern and decided not to find a job</label><br>
+                    <label><input type="checkbox" name="d[reason_no_work_op3]"> Health-related reason(s)</label><br>
+                    <label><input type="checkbox" name="d[reason_no_work_op4]"> Lack of work experience</label><br>
 
                 </div>
                 <br><br>
@@ -768,24 +768,24 @@
                 <h4>27.How long did you stay in your first job?:</h4>
 
 
-                <label><input type="radio" name="d[how_long]" value="Less than a month"> Less than a month</label><br>
-                <label><input type="radio" name="d[how_long]" value="1 to 6 months"> 1 to 6 months</label><br>
-                <label><input type="radio" name="d[how_long]" value="7 to 11 months"> 7 to 11 months</label><br>
+                <label><input type="radio" name="d[how_long_first_job_stay]" value="Less than a month"> Less than a month</label><br>
+                <label><input type="radio" name="d[how_long_first_job_stay]" value="1 to 6 months"> 1 to 6 months</label><br>
+                <label><input type="radio" name="d[how_long_first_job_stay]" value="7 to 11 months"> 7 to 11 months</label><br>
 
             </div>
 
 
             <div style="margin-top: 45px; margin-inline-start: 20px; margin-left: -180px; ">
-                <label><input type="radio" name="d[how_long]" value="1 year to less than 2 years"> 1 year to less than 2 years</label><br>
-                <label><input type="radio" name="d[how_long]" value="2 years to less than 3 years"> 2 years to less than 3 years</label><br>
-                <label><input type="radio" name="d[how_long]" value="3 years to less than 4 years"> 3 years to less than 4 years</label><br>
+                <label><input type="radio" name="d[how_long_first_job_stay]" value="1 year to less than 2 years"> 1 year to less than 2 years</label><br>
+                <label><input type="radio" name="d[how_long_first_job_stay]" value="2 years to less than 3 years"> 2 years to less than 3 years</label><br>
+                <label><input type="radio" name="d[how_long_first_job_stay]" value="3 years to less than 4 years"> 3 years to less than 4 years</label><br>
 
 
             </div>
 
             <div style="margin-top: 45px; margin-inline-start: 20px; ">
-                <label><input type="radio"> Others, please specify</label>
-                <input type="text" size="50" name="d[how_long_remarks]"  placeholder="Please specify">
+                <label><input type="radio" name="d[how_long_first_job_stay]" value="Others, please specify"> Others, please specify</label>
+                <input type="text" size="50" name="d[how_long_first_job_stay_remarks]"  placeholder="Please specify">
 
 
             </div>
@@ -799,19 +799,19 @@
                 <h4>28. How did you find your first job?:</h4>
 
 
-                <label><input type="radio" name="d[how_did_you_find]" value="Response to an advertisement"> Response to an advertisement</label><br>
-                <label><input type="radio" name="d[how_did_you_find]" value="As walk-in applicant"> As walk-in applicant</label><br>
-                <label><input type="radio" name="d[how_did_you_find]" value="Recommended by someone"> Recommended by someone</label><br>
-                <label><input type="radio" name="d[how_did_you_find]" value="Others, please specify"> Others, please specify</label>
-                <input type="text" size="50" placeholder="Please specify" name="d[how_did_you_find_remarks]">
+                <label><input type="radio" name="d[how_did_you_find_first_job]" value="Response to an advertisement"> Response to an advertisement</label><br>
+                <label><input type="radio" name="d[how_did_you_find_first_job]" value="As walk-in applicant"> As walk-in applicant</label><br>
+                <label><input type="radio" name="d[how_did_you_find_first_job]" value="Recommended by someone"> Recommended by someone</label><br>
+                <label><input type="radio" name="d[how_did_you_find_first_job]" value="Others, please specify"> Others, please specify</label>
+                <input type="text" size="50" placeholder="Please specify" name="d[how_did_you_find_first_job_remarks]">
 
             </div>
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 
             <div style="margin-top: 45px; margin-inline-start: 20px; margin-left: -180px; ">
-                <label><input type="radio" name="d[how_did_you_find]" value="Arranged by school’s job placement officer"> Arranged by school’s job placement officer</label><br>
-                <label><input type="radio" name="d[how_did_you_find]" value="Family business"> Family business</label><br>
-                <label><input type="radio" name="d[how_did_you_find]" value="Job Fair or Public Employment Service Office (PESO)"> Job Fair or Public Employment Service Office (PESO)</label><br>
+                <label><input type="radio" name="d[how_did_you_find_first_job]" value="Arranged by school’s job placement officer"> Arranged by school’s job placement officer</label><br>
+                <label><input type="radio" name="d[how_did_you_find_first_job]" value="Family business"> Family business</label><br>
+                <label><input type="radio" name="d[how_did_you_find_first_job]" value="Job Fair or Public Employment Service Office (PESO)"> Job Fair or Public Employment Service Office (PESO)</label><br>
 
 
             </div>
@@ -825,24 +825,24 @@
                 <h4>29.How long did it take to land your first job?:</h4>
 
 
-                <label><input type="radio" name="d[how_long_did_it_take]" value="Less than a month"> Less than a month</label><br>
-                <label><input type="radio" name="d[how_long_did_it_take]" value="1 to 6 months"> 1 to 6 months</label><br>
-                <label><input type="radio" name="d[how_long_did_it_take]" value="7 to 11 months"> 7 to 11 months</label><br>
+                <label><input type="radio" name="d[how_long_did_it_take_first_job]" value="Less than a month"> Less than a month</label><br>
+                <label><input type="radio" name="d[how_long_did_it_take_first_job]" value="1 to 6 months"> 1 to 6 months</label><br>
+                <label><input type="radio" name="d[how_long_did_it_take_first_job]" value="7 to 11 months"> 7 to 11 months</label><br>
 
             </div>
 
 
             <div style="margin-top: 45px; margin-inline-start: 20px; margin-left: -180px; ">
-                <label><input type="radio" name="d[how_long_did_it_take]" value="1 year to less than 2 years"> 1 year to less than 2 years</label><br>
-                <label><input type="radio" name="d[how_long_did_it_take]" value="2 years to less than 3 years"> 2 years to less than 3 years</label><br>
-                <label><input type="radio" name="d[how_long_did_it_take]" value="3 years to less than 4 years"> 3 years to less than 4 years</label><br>
+                <label><input type="radio" name="d[how_long_did_it_take_first_job]" value="1 year to less than 2 years"> 1 year to less than 2 years</label><br>
+                <label><input type="radio" name="d[how_long_did_it_take_first_job]" value="2 years to less than 3 years"> 2 years to less than 3 years</label><br>
+                <label><input type="radio" name="d[how_long_did_it_take_first_job]" value="3 years to less than 4 years"> 3 years to less than 4 years</label><br>
 
 
             </div>
 
             <div style="margin-top: 45px; margin-inline-start: 20px; ">
-                <label><input type="radio" name="d[how_long_did_it_take]" value="Others, please specify"> Others, please specify</label>
-                <input type="text" size="50" placeholder="Please specify" name="d[how_long_did_it_take_remarks]">
+                <label><input type="radio" name="d[how_long_did_it_take_first_job]" value="Others, please specify"> Others, please specify</label>
+                <input type="text" size="50" placeholder="Please specify" name="d[how_long_did_it_take_first_job_remarks]">
 
 
             </div>
@@ -863,23 +863,23 @@
         <tbody>
         <tr>
             <td class="text-left">Rank or Clerical</td>
-            <td><input type="radio" name="d[rank_q1]" value="yes"></td>
-            <td><input type="radio" name="d[rank_q1]" value="no"></td>
+            <td><input type="radio" name="d[job_rank_q1]" value="first_job"></td>
+            <td><input type="radio" name="d[job_rank_q1]" value="present"></td>
         </tr>
         <tr>
             <td class="text-left">Professional, Technical or Supervisory</td>
-            <td><input type="radio" name="d[rank_q2]" value="yes"></td>
-            <td><input type="radio" name="d[rank_q2]" value="no"></td>
+            <td><input type="radio" name="d[job_rank_q2]" value="first_job"></td>
+            <td><input type="radio" name="d[job_rank_q2]" value="present"></td>
         </tr>
         <tr>
             <td class="text-left">Managerial or Executive</td>
-            <td><input type="radio" name="d[rank_q3]" value="yes"></td>
-            <td><input type="radio" name="d[rank_q3]" value="no"></td>
+            <td><input type="radio" name="d[job_rank_q3]" value="first_job"></td>
+            <td><input type="radio" name="d[job_rank_q3]" value="present"></td>
         </tr>
         <tr>
             <td class="text-left">Self-employed</td>
-            <td><input type="radio" name="d[rank_q4]" value="yes"></td>
-            <td><input type="radio" name="d[rank_q4]" value="no"></td>
+            <td><input type="radio" name="d[job_rank_q4]" value="first_job"></td>
+            <td><input type="radio" name="d[job_rank_q4]" value="present"></td>
         </tr>
 </table>
 <br> <br>
@@ -890,19 +890,17 @@
             <h4>31.What is your initial gross monthly earning in your first job after college?:</h4>
 
 
-            <label><input type="radio" name="d[monthly_earning]" value="Below P5,000.00"> Below P5,000.00</label><br>
-            <label><input type="radio" name="d[monthly_earning]" value="P5,000.00 to less than P10,000.00"> P5,000.00 to less than P10,000.00</label><br>
-            <label><input type="radio" name="d[monthly_earning]" value="P10,000.00 to less than P15,000.00"> P10,000.00 to less than P15,000.00</label><br>
+            <label><input type="radio" name="d[monthly_earning_first_job]" value="Below P5,000.00"> Below P5,000.00</label><br>
+            <label><input type="radio" name="d[monthly_earning_first_job]" value="P5,000.00 to less than P10,000.00"> P5,000.00 to less than P10,000.00</label><br>
+            <label><input type="radio" name="d[monthly_earning_first_job]" value="P10,000.00 to less than P15,000.00"> P10,000.00 to less than P15,000.00</label><br>
 
         </div>
 
 
         <div style="margin-top: 45px; margin-inline-start: 20px; margin-left: -180px; ">
-            <label><input type="radio" name="d[monthly_earning]" value="P15,000.00 to less than P20,000.00"> P15,000.00 to less than P20,000.00</label><br>
-            <label><input type="radio" name="d[monthly_earning]" value="P20,000.00 to less than P25,000.00"> P20,000.00 to less than P25,000.00</label><br>
-            <label><input type="radio" name="d[monthly_earning]" value="P25,000.00 and above"> P25,000.00 and above</label><br>
-
-
+            <label><input type="radio" name="d[monthly_earning_first_job]" value="P15,000.00 to less than P20,000.00"> P15,000.00 to less than P20,000.00</label><br>
+            <label><input type="radio" name="d[monthly_earning_first_job]" value="P20,000.00 to less than P25,000.00"> P20,000.00 to less than P25,000.00</label><br>
+            <label><input type="radio" name="d[monthly_earning_first_job]" value="P25,000.00 and above"> P25,000.00 and above</label><br>
         </div>
 
 

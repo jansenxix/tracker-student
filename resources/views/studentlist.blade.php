@@ -228,7 +228,7 @@
                                 <td>{{$value->lname}}</td>
                                 <td>{{$value->studentNumber}}</td>
                                 <td>{{$value->acadYear}}</td>
-                                <td>{{$value->acadTerm}}</td>
+                                <td>{{$value->acadTerm}}st Term</td>
                                 <td>{{$value->courseData->description}}</td>
 
                                  <td><button type="button" student-id="{{$value->id}}" student-fname="{{$value->fname}}" student-lname="{{$value->lname}}"  student-snumber="{{$value->studentNumber}}"  student-acadYear="{{$value->acadYear}}" student-acadTerm="{{$value->acadTerm}}" student-course="{{$value->course}}" class="btn btn-info editBtn mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="Red" class="bi bi-pencil-square" viewBox="0 0 16 16">

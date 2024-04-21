@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Mail\PasswordMail;
 use Illuminate\Http\Request;
 use App\Models\admin;
 use App\Models\signup;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class SignupController extends Controller
 {

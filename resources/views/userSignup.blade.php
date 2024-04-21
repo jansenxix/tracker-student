@@ -87,7 +87,7 @@
         if(response.message == 'Success')
         {
 
-          location.href = "/form";
+          location.href = "/form/"+response.user.id;
         }
         else
         {

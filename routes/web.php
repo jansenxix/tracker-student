@@ -35,15 +35,19 @@ Route::get('/course', function () {
     return view('course');
 });
 
-Route::get('/form', function () {
-    return view('form');
-
+Route::get('/form/{id}', function ($id) {
+    return view('form', ['id' => $id]);
 });
+
 Route::get('/profile', function () {
     return view('profile');
 });
 Route::get('/dashboard', function () {
     return view('dashboard');
+});
+
+Route::get('/notif', function () {
+    return view('notification');
 });
 
 Route::get('/testlogin', function () {
@@ -79,6 +83,19 @@ Route::get('/posts', [PostController::class, 'posts']);
 
 Route::post('/comment', [CommentController::class, 'comment']);
 
-Route::post('/createStudent', function (\Illuminate\Http\Request $request) {
-    \Illuminate\Support\Facades\Log::info(json_encode($request->all()));
+Route::post('/createStudent', [StudentListController::class, 'register']);
+Route::get('/notification/{id}', [\App\Http\Controllers\NotificationController::class, 'getNotification']);
+Route::get('/post/{id}/{notifId}', function ($id, $notifId) {
+    $notification = \App\Models\Notification::find($notifId);
+    $notification->view = 1;
+    $notification->save();
+
+    \App\Models\Notification::where('post_id', $id)->update(["view" => 1]);
+
+    return view("post", ["id" => $id]);
 });
+Route::get('/post/{id}', function($id) {
+    return view("post", ["id" => $id]);
+});
+
+Route::post('/post/{id}', [PostController::class, 'getPost']);
