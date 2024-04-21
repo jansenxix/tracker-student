@@ -34,7 +34,7 @@ class AdminController extends Controller
     }
     public function adminlist()
     {
-        $Admin = admin::all();
+        $Admin = admin::whereIn("user_type", [0, 1])->get();
         return view('admin', ["admin" => $Admin]);
     }
 

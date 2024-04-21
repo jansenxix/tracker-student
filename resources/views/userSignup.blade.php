@@ -91,7 +91,7 @@
         }
         else
         {
-          alert("Credential not exist!")
+          alert(response.message)
         }
       },
       error: function(data) {

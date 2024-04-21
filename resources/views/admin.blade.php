@@ -205,7 +205,7 @@
                                     </td>
                                     <td>{{$value->fName}}</td>
                                     <td>{{$value->Uname}}</td>
-                                    <td>{{$value->user_type === 0 ? "Admin" : "Coordinator"}}</td>
+                                    <td>{{$value->user_type === 0 ? "Admin" : ($value->user_type === 1 ? "Coordinator" : "student")}}</td>
                                     <td>
                                         <button type="button" admin-id="{{$value->id}}" admin-fName="{{$value->fName}}"
                                                 admin-Uname="{{$value->Uname}}" admin-pass="{{$value->pass}}"
