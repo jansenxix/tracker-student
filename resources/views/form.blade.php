@@ -61,7 +61,7 @@
                                 <td><input type="text"  name="a[phone_number]" placeholder="Enter contact number:"></td>
 
 
-                                <td><input type="text" id="a[contact_number]" placeholder="Enter mobile number:"></td>
+                                <td><input type="text" name="a[contact_number]" placeholder="Enter mobile number:"></td>
                             </tr>
                         </table>
                         <br> <br>

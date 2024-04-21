@@ -38,6 +38,12 @@ class AdminController extends Controller
         return view('admin', ["admin" => $Admin]);
     }
 
+    public function student()
+    {
+        $Admin = admin::whereIn("user_type", [2])->get();
+        return view('registered', ["admin" => $Admin]);
+    }
+
     public function update(Request $request)
     {
         $Admin = admin::find($request->id);
@@ -76,6 +82,14 @@ class AdminController extends Controller
             'status'=>200,
             'message'=>'Admin Deleted Succesfully',
         ]);
+    }
+
+    public function studentDetail($id)
+    {
+        $admin = admin::find($id);
+        $admin->data = json_decode($admin->data);
+        Log::info($admin);
+        return view("registered-detail", ["student" => $admin]);
     }
 
 }

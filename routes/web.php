@@ -55,6 +55,9 @@ Route::get('/testlogin', function () {
 });
 
 
+Route::get('/registered-student/detail/{id}', [AdminController::class, 'studentDetail']);
+
+
 
 
 Route::get('/studentlist', [StudentListController::class, 'studentlist']);
@@ -67,6 +70,7 @@ Route::post('/deletestudent', [StudentlistController::class, 'delete']);
 Route::post('/deletecourse', [CourseListController::class, 'delete']);
 Route::get('/admin', [AdminController::class, 'adminlist']);
 Route::post('/adminlist', [AdminController::class, 'admin']);
+Route::get('/registered-student', [AdminController::class, 'student']);
 Route::post('/updatecourse', [AdminController::class, 'update']);
 Route::post('/deleteadmin', [AdminController::class, 'delete']);
 Route::post('/signup', [SignupController::class, 'store']);
