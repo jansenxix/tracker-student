@@ -29,7 +29,7 @@ Route::get('/', function () {
     return view('signup');
 });
 Route::get('/userSignup', function () {
-    return view('usersignup');
+    return view('userSignup');
 });
 Route::get('/course', function () {
     return view('course');
