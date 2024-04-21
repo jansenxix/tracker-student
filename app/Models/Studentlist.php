@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\courselist;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class studentlist extends Model
+class Studentlist extends Model
 {
     use HasFactory;
 

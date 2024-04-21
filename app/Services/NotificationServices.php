@@ -24,6 +24,8 @@ class NotificationServices
 
         $users = array_unique($users);
 
+        Log::info(json_encode($users));
+
         foreach ($users as $user)
         {
             $notification = new Notification();
