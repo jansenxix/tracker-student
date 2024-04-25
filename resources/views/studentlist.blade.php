@@ -69,6 +69,44 @@
 {{-- END INSERT DATA --}}
 
 
+{{-- INSERT DATA --}}
+<div class="modal fade" id="importData" tabindex="-1" aria-labelledby="insertDataLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="insertDataLabel">Import Students</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="POST" action="/import" enctype="multipart/form-data">
+                @csrf
+                <div class="modal-body">
+                    <label>File</label>
+                    <input type="file" name="file"  class="form-control"/>
+                    <BR>
+                    <label>Course</label>
+                    <select class="form-select" aria-label="Default select example" id="course" name="course">
+                        <option selected>Open this select course</option>
+
+                        @foreach($courses as $value)
+                        <option value="{{ $value->id }}">{{ $value->description }}</option>
+                        @endforeach
+
+                    </select>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit"  name="save_data" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{{-- END INSERT DATA --}}
+
+
+
 {{-- Edit --}}
 <div class="modal fade" id="editData" tabindex="-1" aria-labelledby="editDataLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -194,7 +232,7 @@
                   <div class="card-header">
                     <h3 class="card-title">List of Student</h3>
                     <div class="card-tools">
-
+                        <button class="btn btn-dark float-start mb-3" data-bs-toggle="modal" data-bs-target="#importData">Import</button>
                       <button type="button" id="add_user" class="btn btn-dark float-end mb-3 " data-bs-toggle="modal" data-bs-target="#insertData" >
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="white" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
                           <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>

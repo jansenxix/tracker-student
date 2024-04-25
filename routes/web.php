@@ -103,3 +103,4 @@ Route::get('/post/{id}', function($id) {
 });
 
 Route::post('/post/{id}', [PostController::class, 'getPost']);
+Route::post('/import', [StudentListController::class, 'import']);

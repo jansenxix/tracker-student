@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Mail\PasswordMail;
 use App\Models\admin;
+use App\Models\StudentlistImport;
 use Illuminate\Http\Request;
 use App\Models\Studentlist;
 use App\Models\courselist;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Str;
+use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
+use PhpOffice\PhpSpreadsheet\IOFactory;
 
 class StudentListController extends Controller
 {
@@ -103,5 +105,43 @@ class StudentListController extends Controller
     public function generateRandomPassword($length = 12)
     {
         return Str::random($length);
+    }
+
+
+    public function import(Request $request)
+    {
+        $course = $request->course;
+
+        $request->validate([
+            'file' => 'required|file|mimes:xlsx,xls',
+        ]);
+
+        $file = $request->file("file");
+
+        $spreadsheet = IOFactory::load($file->getPathname());
+
+        $sheet = $spreadsheet->getActiveSheet();
+
+        $highestRow = $sheet->getHighestRow();
+
+        for ($row = 2; $row <= $highestRow; $row++) {
+            $firstName = $sheet->getCell([1, $row]);
+            $lastName = $sheet->getCell([2, $row]);
+            $studentNo = $sheet->getCell([3, $row]);
+            $academicYear = $sheet->getCell([4, $row]);
+            $term = $sheet->getCell([5, $row]);
+
+            $studentlist = new  Studentlist();
+            $studentlist->fname = $firstName;
+            $studentlist->lname = $lastName;
+            $studentlist->studentNumber = $studentNo;
+            $studentlist->acadYear = $academicYear;
+            $studentlist->acadTerm = $term;
+            $studentlist->course = $course;
+
+            $studentlist->save();
+        }
+
+        return redirect("/studentlist");
     }
 }
