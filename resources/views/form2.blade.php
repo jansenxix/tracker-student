@@ -109,33 +109,33 @@
                                 <div>
                                     <legend class="test">9. &nbsp;Region of origin:</legend>
 
-                                    <label><input type="radio" name="a[region]" value="Region 1" {{$student->data->a->region == 'Region 1' ? 'checked' : '' }} disabled> Region 1</label><br>
-                                    <label><input type="radio" name="a[region]" value="Region 2" {{$student->data->a->region == 'Region 2' ? 'checked' : '' }} disabled> Region 2</label><br>
-                                    <label><input type="radio" name="a[region]" value="Region 3" {{$student->data->a->region == 'Region 3' ? 'checked' : '' }} disabled> Region 3</label><br>
-                                    <label><input type="radio" name="a[region]" value="Region 4" {{$student->data->a->region == 'Region 4' ? 'checked' : '' }} disabled> Region 4</label><br>
+                                    <label><input type="radio" name="a[region]" value="Region 1" {{($student->data->a->region ?? "") == 'Region 1' ? 'checked' : '' }} disabled> Region 1</label><br>
+                                    <label><input type="radio" name="a[region]" value="Region 2" {{($student->data->a->region ?? "") == 'Region 2' ? 'checked' : '' }} disabled> Region 2</label><br>
+                                    <label><input type="radio" name="a[region]" value="Region 3" {{($student->data->a->region ?? "") == 'Region 3' ? 'checked' : '' }} disabled> Region 3</label><br>
+                                    <label><input type="radio" name="a[region]" value="Region 4" {{($student->data->a->region ?? "") == 'Region 4' ? 'checked' : '' }} disabled> Region 4</label><br>
                                 </div>
 
 
                                 <div style="margin-top: 45px; margin-inline-start: 20px; margin-left: -180px; ">
-                                    <label><input type="radio" name="a[region]" value="Region 5" {{$student->data->a->region == 'Region 5' ? 'checked' : '' }} disabled> Region 5</label><br>
-                                    <label><input type="radio" name="a[region]" value="Region 6" {{$student->data->a->region == 'Region 6' ? 'checked' : '' }} disabled> Region 6</label><br>
-                                    <label><input type="radio" name="a[region]" value="Region 7" {{$student->data->a->region == 'Region 7' ? 'checked' : '' }} disabled> Region 7</label><br>
-                                    <label><input type="radio" name="a[region]" value="Region 8" {{$student->data->a->region == 'Region 8' ? 'checked' : '' }} disabled> Region 8</label><br>
+                                    <label><input type="radio" name="a[region]" value="Region 5" {{($student->data->a->region ?? "") == 'Region 5' ? 'checked' : '' }} disabled> Region 5</label><br>
+                                    <label><input type="radio" name="a[region]" value="Region 6" {{($student->data->a->region ?? "") == 'Region 6' ? 'checked' : '' }} disabled> Region 6</label><br>
+                                    <label><input type="radio" name="a[region]" value="Region 7" {{($student->data->a->region ?? "") == 'Region 7' ? 'checked' : '' }} disabled> Region 7</label><br>
+                                    <label><input type="radio" name="a[region]" value="Region 8" {{($student->data->a->region ?? "") == 'Region 8' ? 'checked' : '' }} disabled> Region 8</label><br>
 
                                 </div>
 
                                 <div style="margin-top: 45px; margin-inline-start: 20px; ">
-                                    <label><input type="radio" name="a[region]" value="Region 9" {{$student->data->a->region == 'Region 9' ? 'checked' : '' }} disabled> Region 9</label><br>
-                                    <label><input type="radio" name="a[region]" value="Region 10" {{$student->data->a->region == 'Region 10' ? 'checked' : '' }} disabled> Region 10</label><br>
-                                    <label><input type="radio" name="a[region]" value="Region 11" {{$student->data->a->region == 'Region 11' ? 'checked' : '' }} disabled> Region 11</label><br>
-                                    <label><input type="radio" name="a[region]" value="Region 12" {{$student->data->a->region == 'Region 12' ? 'checked' : '' }} disabled> Region 12</label><br>
+                                    <label><input type="radio" name="a[region]" value="Region 9" {{($student->data->a->region ?? "") == 'Region 9' ? 'checked' : '' }} disabled> Region 9</label><br>
+                                    <label><input type="radio" name="a[region]" value="Region 10" {{($student->data->a->region ?? "") == 'Region 10' ? 'checked' : '' }} disabled> Region 10</label><br>
+                                    <label><input type="radio" name="a[region]" value="Region 11" {{($student->data->a->region ?? "") == 'Region 11' ? 'checked' : '' }} disabled> Region 11</label><br>
+                                    <label><input type="radio" name="a[region]" value="Region 12" {{($student->data->a->region ?? "") == 'Region 12' ? 'checked' : '' }} disabled> Region 12</label><br>
                                 </div>
 
                                 <div style=" margin-inline-start: 20px; margin-top: 45px; margin-right:30px;">
-                                    <label><input type="radio" name="a[region]" value="NCR" {{$student->data->a->region == 'NCR' ? 'checked' : '' }} disabled> NCR</label><br>
-                                    <label><input type="radio" name="a[region]" value="CAR" {{$student->data->a->region == 'CAR' ? 'checked' : '' }} disabled> CAR</label><br>
-                                    <label><input type="radio" name="a[region]" value="ARMM" {{$student->data->a->region == 'ARMM' ? 'checked' : '' }} disabled> ARMM</label><br>
-                                    <label><input type="radio" name="a[region]" value="CARAGA" {{$student->data->a->region == 'CARAGA' ? 'checked' : '' }} disabled> CARAGA</label><br>
+                                    <label><input type="radio" name="a[region]" value="NCR" {{($student->data->a->region ?? "") == 'NCR' ? 'checked' : '' }} disabled> NCR</label><br>
+                                    <label><input type="radio" name="a[region]" value="CAR" {{($student->data->a->region ?? "") == 'CAR' ? 'checked' : '' }} disabled> CAR</label><br>
+                                    <label><input type="radio" name="a[region]" value="ARMM" {{($student->data->a->region ?? "") == 'ARMM' ? 'checked' : '' }} disabled> ARMM</label><br>
+                                    <label><input type="radio" name="a[region]" value="CARAGA" {{($student->data->a->region ?? "") == 'CARAGA' ? 'checked' : '' }} disabled> CARAGA</label><br>
                                 </div>
 
                             </div>
@@ -254,86 +254,86 @@
                     <tbody>
                     <tr>
                         <td class="text-left">High grades in the course or subject area(s)related to the course:</td>
-                        <td><input type="radio" name="b[reason_q1]" value="0" {{$student->data->b->reason_q1 == '0' ? 'checked' : '' }} disabled></td>
-                        <td><input type="radio" name="b[reason_q1]" value="1" {{$student->data->b->reason_q1 == '1' ? 'checked' : '' }} disabled></td>
+                        <td><input type="radio" name="b[reason_q1]" value="0" {{($student->data->b->reason_q1 ?? "") == '0' ? 'checked' : '' }} disabled></td>
+                        <td><input type="radio" name="b[reason_q1]" value="1" {{($student->data->b->reason_q1 ?? "") == '1' ? 'checked' : '' }} disabled></td>
 
                     </tr>
                     <tr>
                         <td class="text-left">Good grades in high school:</td>
-                        <td><input type="radio" name="b[reason_q2]" value="0" {{$student->data->b->reason_q2 == '0' ? 'checked' : '' }} disabled></td>
-                        <td><input type="radio" name="b[reason_q2]" value="1" {{$student->data->b->reason_q2 == '1' ? 'checked' : '' }} disabled></td>
+                        <td><input type="radio" name="b[reason_q2]" value="0" {{($student->data->b->reason_q2 ?? "") == '0' ? 'checked' : '' }} disabled></td>
+                        <td><input type="radio" name="b[reason_q2]" value="1" {{($student->data->b->reason_q2 ?? "") == '1' ? 'checked' : '' }} disabled></td>
 
                     </tr>
                     <tr>
                         <td class="text-left">Influence of parents or relatives:</td>
-                        <td><input type="radio" name="b[reason_q3]" value="0" {{$student->data->b->reason_q3 == '0' ? 'checked' : '' }} disabled></td>
-                        <td><input type="radio" name="b[reason_q3]" value="1" {{$student->data->b->reason_q3 == '1' ? 'checked' : '' }} disabled></td>
+                        <td><input type="radio" name="b[reason_q3]" value="0" {{($student->data->b->reason_q3 ?? "") == '0' ? 'checked' : '' }} disabled></td>
+                        <td><input type="radio" name="b[reason_q3]" value="1" {{($student->data->b->reason_q3 ?? "") == '1' ? 'checked' : '' }} disabled></td>
 
                     </tr>
                     <tr>
                         <td class="text-left">Peer Influence:</td>
-                        <td><input type="radio" name="b[reason_q4]" value="0" {{$student->data->b->reason_q4 == '0' ? 'checked' : '' }} disabled></td>
-                        <td><input type="radio" name="b[reason_q4]" value="1" {{$student->data->b->reason_q4 == '1' ? 'checked' : '' }} disabled></td>
+                        <td><input type="radio" name="b[reason_q4]" value="0" {{($student->data->b->reason_q4 ?? "") == '0' ? 'checked' : '' }} disabled></td>
+                        <td><input type="radio" name="b[reason_q4]" value="1" {{($student->data->b->reason_q4 ?? "") == '1' ? 'checked' : '' }} disabled></td>
 
                     </tr>
                     <tr>
                         <td class="text-left">Inspired by a role model:</td>
-                        <td><input type="radio" name="b[reason_q5]" value="0" {{$student->data->b->reason_q5 == '0' ? 'checked' : '' }} disabled></td>
-                        <td><input type="radio" name="b[reason_q5]" value="1" {{$student->data->b->reason_q5 == '1' ? 'checked' : '' }} disabled></td>
+                        <td><input type="radio" name="b[reason_q5]" value="0" {{($student->data->b->reason_q5 ?? "") == '0' ? 'checked' : '' }} disabled></td>
+                        <td><input type="radio" name="b[reason_q5]" value="1" {{($student->data->b->reason_q5 ?? "") == '1' ? 'checked' : '' }} disabled></td>
 
                     </tr>
                     <tr>
                         <td class="text-left">Strong passion for the profession:</td>
-                        <td><input type="radio" name="b[reason_q6]" value="0" {{$student->data->b->reason_q6 == '0' ? 'checked' : '' }} disabled></td>
-                        <td><input type="radio" name="b[reason_q6]" value="1" {{$student->data->b->reason_q6 == '1' ? 'checked' : '' }} disabled></td>
+                        <td><input type="radio" name="b[reason_q6]" value="0" {{($student->data->b->reason_q6 ?? "") == '0' ? 'checked' : '' }} disabled></td>
+                        <td><input type="radio" name="b[reason_q6]" value="1" {{($student->data->b->reason_q6 ?? "") == '1' ? 'checked' : '' }} disabled></td>
 
                     </tr>
                     <tr>
                         <td class="text-left">Prospect for immediate employment:</td>
-                        <td><input type="radio" name="b[reason_q7]" value="0" {{$student->data->b->reason_q7 == '0' ? 'checked' : '' }} disabled></td>
-                        <td><input type="radio" name="b[reason_q7]" value="1" {{$student->data->b->reason_q7 == '1' ? 'checked' : '' }} disabled></td>
+                        <td><input type="radio" name="b[reason_q7]" value="0" {{($student->data->b->reason_q7 ?? "") == '0' ? 'checked' : '' }} disabled></td>
+                        <td><input type="radio" name="b[reason_q7]" value="1" {{($student->data->b->reason_q7 ?? "") == '1' ? 'checked' : '' }} disabled></td>
                     </tr>
                     <tr>
                         <td class="text-left">Status or prestige of the profession:</td>
-                        <td><input type="radio" name="b[reason_q8]" value="0" {{$student->data->b->reason_q8 == '0' ? 'checked' : '' }} disabled></td>
-                        <td><input type="radio" name="b[reason_q8]" value="1" {{$student->data->b->reason_q8 == '1' ? 'checked' : '' }} disabled></td>
+                        <td><input type="radio" name="b[reason_q8]" value="0" {{($student->data->b->reason_q8 ?? "") == '0' ? 'checked' : '' }} disabled></td>
+                        <td><input type="radio" name="b[reason_q8]" value="1" {{($student->data->b->reason_q8 ?? "") == '1' ? 'checked' : '' }} disabled></td>
 
                     </tr>
                     <tr>
                         <td class="text-left">Availability of course offering in chosen institution:</td>
-                        <td><input type="radio" name="b[reason_q9]" value="0" {{$student->data->b->reason_q9 == '0' ? 'checked' : '' }} disabled></td>
-                        <td><input type="radio" name="b[reason_q9]" value="1" {{$student->data->b->reason_q9 == '1' ? 'checked' : '' }} disabled></td>
+                        <td><input type="radio" name="b[reason_q9]" value="0" {{($student->data->b->reason_q9 ?? "") == '0' ? 'checked' : '' }} disabled></td>
+                        <td><input type="radio" name="b[reason_q9]" value="1" {{($student->data->b->reason_q9 ?? "") == '1' ? 'checked' : '' }} disabled></td>
 
                     </tr>
                     <tr>
                         <td class="text-left">Prospect of career advancement:</td>
-                        <td><input type="radio" name="b[reason_q10]" value="0" {{$student->data->b->reason_q10 == '0' ? 'checked' : '' }} disabled></td>
-                        <td><input type="radio" name="b[reason_q10]" value="1" {{$student->data->b->reason_q10 == '1' ? 'checked' : '' }} disabled></td>
+                        <td><input type="radio" name="b[reason_q10]" value="0" {{($student->data->b->reason_q10 ?? "") == '0' ? 'checked' : '' }} disabled></td>
+                        <td><input type="radio" name="b[reason_q10]" value="1" {{($student->data->b->reason_q10 ?? "") == '1' ? 'checked' : '' }} disabled></td>
 
                     </tr>
                     <tr>
                         <td class="text-left">Affordable for the family:</td>
-                        <td><input type="radio" name="b[reason_q11]" value="0" {{$student->data->b->reason_q11 == '0' ? 'checked' : '' }} disabled></td>
-                        <td><input type="radio" name="b[reason_q11]" value="1" {{$student->data->b->reason_q11 == '1' ? 'checked' : '' }} disabled></td>
+                        <td><input type="radio" name="b[reason_q11]" value="0" {{($student->data->b->reason_q11 ?? "") == '0' ? 'checked' : '' }} disabled></td>
+                        <td><input type="radio" name="b[reason_q11]" value="1" {{($student->data->b->reason_q11 ?? "") == '1' ? 'checked' : '' }} disabled></td>
 
                     </tr>
                     <tr>
                         <td class="text-left">Prospect of attractive compensation:</td>
-                        <td><input type="radio" name="b[reason_q12]" value="0" {{$student->data->b->reason_q12 == '0' ? 'checked' : '' }} disabled></td>
-                        <td><input type="radio" name="b[reason_q12]" value="1" {{$student->data->b->reason_q12 == '1' ? 'checked' : '' }} disabled></td>
+                        <td><input type="radio" name="b[reason_q12]" value="0" {{($student->data->b->reason_q12 ?? "") == '0' ? 'checked' : '' }} disabled></td>
+                        <td><input type="radio" name="b[reason_q12]" value="1" {{($student->data->b->reason_q12 ?? "") == '1' ? 'checked' : '' }} disabled></td>
                     </tr>
                     <tr>
                         <td class="text-left">Opportunity for employment abroad:</td>
-                        <td><input type="radio" name="b[reason_q13]" value="0" {{$student->data->b->reason_q13 == '0' ? 'checked' : '' }} disabled></td>
-                        <td><input type="radio" name="b[reason_q13]" value="1" {{$student->data->b->reason_q13 == '1' ? 'checked' : '' }} disabled></td>
+                        <td><input type="radio" name="b[reason_q13]" value="0" {{($student->data->b->reason_q13 ?? "") == '0' ? 'checked' : '' }} disabled></td>
+                        <td><input type="radio" name="b[reason_q13]" value="1" {{($student->data->b->reason_q13 ?? "") == '1' ? 'checked' : '' }} disabled></td>
 
                     </tr>
 
 
                     <tr>
                         <td class="text-left">No particular choice or no better idea:</td>
-                        <td><input type="radio" name="b[reason_q14]" value="0" {{$student->data->b->reason_q14 == '0' ? 'checked' : '' }} disabled></td>
-                        <td><input type="radio" name="b[reason_q14]" value="1" {{$student->data->b->reason_q14 == '1' ? 'checked' : '' }} disabled></td>
+                        <td><input type="radio" name="b[reason_q14]" value="0" {{($student->data->b->reason_q14 ?? "") == '0' ? 'checked' : '' }} disabled></td>
+                        <td><input type="radio" name="b[reason_q14]" value="1" {{($student->data->b->reason_q14 ?? "") == '1' ? 'checked' : '' }} disabled></td>
                     </tr>
             </div>
             </table>
@@ -398,17 +398,17 @@
                     <legend>15b. &nbsp; What made you pursue advance studies?</legend>
                     <br>
                     <tr>
-                        <td><input type="radio" name="c[q1]" value="For promotion" {{$student->data->c->q1 == 'For promotion' ? 'checked' : '' }} disabled></td>
+                        <td><input type="radio" name="c[q1]" value="For promotion" {{($student->data->c->q1 ?? "") == 'For promotion' ? 'checked' : '' }} disabled></td>
                         <td class="text-left"> For promotion</td>
                     </tr>
 
                     <tr>
-                        <td><input type="radio" name="c[q1]" value="For professional development" {{$student->data->c->q1 == 'For professional development' ? 'checked' : '' }} disabled></td>
+                        <td><input type="radio" name="c[q1]" value="For professional development" {{($student->data->c->q1 ?? "") == 'For professional development' ? 'checked' : '' }} disabled></td>
                         <td class="text-left">For professional development</td>
                     </tr>
 
                     <tr>
-                        <td><input type="radio" name="c[q1]" value="Others, please specify" {{$student->data->c->q1 == 'Others, please specify' ? 'checked' : '' }} disabled></td>
+                        <td><input type="radio" name="c[q1]" value="Others, please specify" {{($student->data->c->q1 ?? "") == 'Others, please specify' ? 'checked' : '' }} disabled></td>
                         <td class="text-left">Others, please specify
                     </tr>
             </div>
@@ -428,11 +428,11 @@
             <table>
                 <h3> 16. &nbsp;Are you presently employed?</h3>
                 <tr>
-                    <td><input type="radio" name="d[employed]" value="yes" {{$student->data->d->employed == 'yes' ? 'checked' : '' }} disabled></td>
+                    <td><input type="radio" name="d[employed]" value="yes" {{($student->data->d->employed ?? "") == 'yes' ? 'checked' : '' }} disabled></td>
                     <td style="text-align: left;"><label for="Yes">Yes</label></td>
-                    <td><input type="radio" name="d[employed]" value="no" {{$student->data->d->employed == 'no' ? 'checked' : '' }} disabled></td>
+                    <td><input type="radio" name="d[employed]" value="no" {{($student->data->d->employed ?? "") == 'no' ? 'checked' : '' }} disabled></td>
                     <td style="text-align: left;"><label for="No">No</label></td>
-                    <td><input type="radio" name="d[employed]" value="Never Employed" {{$student->data->d->employed == 'Never Employed' ? 'checked' : '' }} disabled></td>
+                    <td><input type="radio" name="d[employed]" value="Never Employed" {{($student->data->d->employed ?? "") == 'Never Employed' ? 'checked' : '' }} disabled></td>
                     <td style="text-align: left;"><label for="No">Never Employed</label></td>
                 </tr>
             </table>
@@ -480,9 +480,9 @@
             <div>
                 <legend class="test">18. &nbsp;Present Employment Status:</legend>
 
-                <label><input type="radio" name="d[present_employment_status]" value="Regular or Permanent" {{$student->data->d->present_employment_status == 'Regular or Permanent' ? 'checked' : '' }} disabled> Regular or Permanent</label><br>
-                <label><input type="radio" name="d[present_employment_status]" value="Temporary" {{$student->data->d->present_employment_status == 'Temporary' ? 'checked' : '' }} disabled> Temporary</label><br>
-                <label><input type="radio" name="d[present_employment_status]" value="Casual" {{$student->data->d->present_employment_status == 'Casual' ? 'checked' : '' }} disabled> Casual</label><br>
+                <label><input type="radio" name="d[present_employment_status]" value="Regular or Permanent" {{($student->data->d->present_employment_status ?? "") == 'Regular or Permanent' ? 'checked' : '' }} disabled> Regular or Permanent</label><br>
+                <label><input type="radio" name="d[present_employment_status]" value="Temporary" {{($student->data->d->present_employment_status ?? "") == 'Temporary' ? 'checked' : '' }} disabled> Temporary</label><br>
+                <label><input type="radio" name="d[present_employment_status]" value="Casual" {{($student->data->d->present_employment_status ?? "") == 'Casual' ? 'checked' : '' }} disabled> Casual</label><br>
 
 
             </div>
@@ -491,8 +491,8 @@
             <div>
                 <br>
                 <br>
-                <label><input type="radio" name="d[present_employment_status]" value="Contractual" {{$student->data->d->present_employment_status == 'Contractual' ? 'checked' : '' }} disabled> Contractual</label><br>
-                <label><input type="radio" name="d[present_employment_status]" value="Self-employed" {{$student->data->d->present_employment_status == 'Self-employed' ? 'checked' : '' }} disabled> Self-employed</label><br>
+                <label><input type="radio" name="d[present_employment_status]" value="Contractual" {{($student->data->d->present_employment_status ?? "") == 'Contractual' ? 'checked' : '' }} disabled> Contractual</label><br>
+                <label><input type="radio" name="d[present_employment_status]" value="Self-employed" {{($student->data->d->present_employment_status ?? "") == 'Self-employed' ? 'checked' : '' }} disabled> Self-employed</label><br>
             </div>
     </table>
         </div>
@@ -517,38 +517,38 @@
         <table>
 
             <tr>
-                <td><input type="radio" name="d[major_present_company]" value="Agriculture, Hunting and Forestry" {{$student->data->d->major_present_company == 'Agriculture, Hunting and Forestry' ? 'checked' : '' }} disabled></td>
+                <td><input type="radio" name="d[major_present_company]" value="Agriculture, Hunting and Forestry" {{($student->data->d->major_present_company ?? "") == 'Agriculture, Hunting and Forestry' ? 'checked' : '' }} disabled></td>
                 <td class="text-left">Agriculture, Hunting and Forestry</td>
             </tr>
 
             <tr>
-                <td><input type="radio" name="d[major_present_company]" value="Fishing" {{$student->data->d->major_present_company == 'Fishing' ? 'checked' : '' }} disabled></td>
+                <td><input type="radio" name="d[major_present_company]" value="Fishing" {{($student->data->d->major_present_company ?? "") == 'Fishing' ? 'checked' : '' }} disabled></td>
                 <td class="text-left">Fishing</td>
             </tr>
 
             <tr>
-                <td><input type="radio" name="d[major_present_company]" value="Mining and Quarrying" {{$student->data->d->major_present_company == 'Mining and Quarrying' ? 'checked' : '' }} disabled></td>
+                <td><input type="radio" name="d[major_present_company]" value="Mining and Quarrying" {{($student->data->d->major_present_company ?? "") == 'Mining and Quarrying' ? 'checked' : '' }} disabled></td>
                 <td class="text-left">Mining and Quarrying</td>
             </tr>
 
             <tr>
-                <td><input type="radio" name="d[major_present_company]" value="Manufacturing" {{$student->data->d->major_present_company == 'Manufacturing' ? 'checked' : '' }} disabled></td>
+                <td><input type="radio" name="d[major_present_company]" value="Manufacturing" {{($student->data->d->major_present_company ?? "") == 'Manufacturing' ? 'checked' : '' }} disabled></td>
                 <td class="text-left">Manufacturing</td>
             </tr>
 
             <tr>
-                <td><input type="radio" name="d[major_present_company]" value="Electricity, Gas and Water Supply" {{$student->data->d->major_present_company == 'Electricity, Gas and Water Supply' ? 'checked' : '' }} disabled></td>
+                <td><input type="radio" name="d[major_present_company]" value="Electricity, Gas and Water Supply" {{($student->data->d->major_present_company ?? "") == 'Electricity, Gas and Water Supply' ? 'checked' : '' }} disabled></td>
                 <td class="text-left">Electricity, Gas and Water Supply</td>
             </tr>
 
             <tr>
-                <td><input type="radio" name="d[major_present_company]" value="Construction" {{$student->data->d->major_present_company == 'Construction' ? 'checked' : '' }} disabled></td>
+                <td><input type="radio" name="d[major_present_company]" value="Construction" {{($student->data->d->major_present_company ?? "") == 'Construction' ? 'checked' : '' }} disabled></td>
                 <td class="text-left">Construction</td>
             </tr>
 
             <tr>
                 <td><input type="radio" name="d[major_present_company]" value="Wholesale and Retail Trade, repair of motor vehicles,motorcycles and personal and
-                    household goods" {{$student->data->d->major_present_company == 'Wholesale and Retail Trade, repair of motor vehicles,motorcycles and personal and
+                    household goods" {{($student->data->d->major_present_company ?? "") == 'Wholesale and Retail Trade, repair of motor vehicles,motorcycles and personal and
                     household goods' ? 'checked' : '' }} disabled></td>
                 <td class="text-left">Wholesale and Retail Trade, repair of motor vehicles,motorcycles and personal and
                     household goods
@@ -556,52 +556,52 @@
             </tr>
 
             <tr>
-                <td><input type="radio" name="d[major_present_company]" value="Hotels and Restaurants" {{$student->data->d->major_present_company == 'Hotels and Restaurants' ? 'checked' : '' }} disabled></td>
+                <td><input type="radio" name="d[major_present_company]" value="Hotels and Restaurants" {{($student->data->d->major_present_company ?? "") == 'Hotels and Restaurants' ? 'checked' : '' }} disabled></td>
                 <td class="text-left">Hotels and Restaurants</td>
             </tr>
 
             <tr>
-                <td><input type="radio" name="d[major_present_company]" value="Transport Storage and Communication" {{$student->data->d->major_present_company == 'Transport Storage and Communication' ? 'checked' : '' }} disabled></td>
+                <td><input type="radio" name="d[major_present_company]" value="Transport Storage and Communication" {{($student->data->d->major_present_company ?? "") == 'Transport Storage and Communication' ? 'checked' : '' }} disabled></td>
                 <td class="text-left">Transport Storage and Communication</td>
             </tr>
 
             <tr>
-                <td><input type="radio" name="d[major_present_company]" value="Financial Intermediation" {{$student->data->d->major_present_company == 'Financial Intermediation' ? 'checked' : '' }} disabled></td>
+                <td><input type="radio" name="d[major_present_company]" value="Financial Intermediation" {{($student->data->d->major_present_company ?? "") == 'Financial Intermediation' ? 'checked' : '' }} disabled></td>
                 <td class="text-left">Financial Intermediation</td>
             </tr>
 
             <tr>
-                <td><input type="radio" name="d[major_present_company]" value="Real Estate, Renting and Business Activities" {{$student->data->d->major_present_company == 'Real Estate, Renting and Business Activities' ? 'checked' : '' }} disabled></td>
+                <td><input type="radio" name="d[major_present_company]" value="Real Estate, Renting and Business Activities" {{($student->data->d->major_present_company ?? "") == 'Real Estate, Renting and Business Activities' ? 'checked' : '' }} disabled></td>
                 <td class="text-left">Real Estate, Renting and Business Activities</td>
             </tr>
 
             <tr>
-                <td><input type="radio" name="d[major_present_company]" value="Public Administration and Defense; CompulsorySocial Security" {{$student->data->d->major_present_company == 'Public Administration and Defense; CompulsorySocial Security' ? 'checked' : '' }} disabled></td>
+                <td><input type="radio" name="d[major_present_company]" value="Public Administration and Defense; CompulsorySocial Security" {{($student->data->d->major_present_company ?? "") == 'Public Administration and Defense; CompulsorySocial Security' ? 'checked' : '' }} disabled></td>
                 <td class="text-left">Public Administration and Defense; CompulsorySocial Security</td>
             </tr>
 
             <tr>
-                <td><input type="radio" name="d[major_present_company]" value="Education" {{$student->data->d->major_present_company == 'Education' ? 'checked' : '' }} disabled></td>
+                <td><input type="radio" name="d[major_present_company]" value="Education" {{($student->data->d->major_present_company ?? "") == 'Education' ? 'checked' : '' }} disabled></td>
                 <td class="text-left">Education</td>
             </tr>
 
             <tr>
-                <td><input type="radio" name="d[major_present_company]" value="Health and Social Work" {{$student->data->d->major_present_company == 'Health and Social Work' ? 'checked' : '' }} disabled></td>
+                <td><input type="radio" name="d[major_present_company]" value="Health and Social Work" {{($student->data->d->major_present_company ?? "") == 'Health and Social Work' ? 'checked' : '' }} disabled></td>
                 <td class="text-left">Health and Social Work</td>
             </tr>
 
             <tr>
-                <td><input type="radio" name="d[major_present_company]" value="Other Community, Social and Personal Service Activities" {{$student->data->d->major_present_company == 'Other Community, Social and Personal Service Activities' ? 'checked' : '' }} disabled></td>
+                <td><input type="radio" name="d[major_present_company]" value="Other Community, Social and Personal Service Activities" {{($student->data->d->major_present_company ?? "") == 'Other Community, Social and Personal Service Activities' ? 'checked' : '' }} disabled></td>
                 <td class="text-left">Other Community, Social and Personal Service Activities</td>
             </tr>
 
             <tr>
-                <td><input type="radio" name="d[major_present_company]" value="Private Households with Employed Persons" {{$student->data->d->major_present_company == 'Private Households with Employed Persons' ? 'checked' : '' }} disabled></td>
+                <td><input type="radio" name="d[major_present_company]" value="Private Households with Employed Persons" {{($student->data->d->major_present_company ?? "") == 'Private Households with Employed Persons' ? 'checked' : '' }} disabled></td>
                 <td class="text-left">Private Households with Employed Persons</td>
             </tr>
 
             <tr>
-                <td><input type="radio" name="d[major_present_company]" value="Extra-territorial Organizations and Bodies" {{$student->data->d->major_present_company == 'Extra-territorial Organizations and Bodies' ? 'checked' : '' }} disabled></td>
+                <td><input type="radio" name="d[major_present_company]" value="Extra-territorial Organizations and Bodies" {{($student->data->d->major_present_company ?? "") == 'Extra-territorial Organizations and Bodies' ? 'checked' : '' }} disabled></td>
                 <td class="text-left">Extra-territorial Organizations and Bodies</td>
             </tr>
         </table>
@@ -611,10 +611,10 @@
         <table>
             <h4> 21. Place of work.</h4>
 
-            <input type="radio" name="d[place_work]" value="Local" {{$student->data->d->place_work == 'Local' ? 'checked' : '' }} disabled>
+            <input type="radio" name="d[place_work]" value="Local" {{($student->data->d->place_work ?? "") == 'Local' ? 'checked' : '' }} disabled>
             <label for="Local">&nbsp; Local</label>
             &nbsp;
-            <input type="radio" name="d[place_work]" value="Abroad" {{$student->data->d->place_work == 'Abroad' ? 'checked' : '' }} disabled>
+            <input type="radio" name="d[place_work]" value="Abroad" {{($student->data->d->place_work ?? "") == 'Abroad' ? 'checked' : '' }} disabled>
             <label for="Local"> &nbsp;Abroad</label>
 
         </table>
@@ -623,10 +623,10 @@
         <table>
             <h4> 22. Is this your first job after college?.</h4>
 
-            <input type="radio" name="d[first_job]" value="yes" {{$student->data->d->first_job == 'yes' ? 'checked' : '' }} disabled>
+            <input type="radio" name="d[first_job]" value="yes" {{($student->data->d->first_job ?? "") == 'yes' ? 'checked' : '' }} disabled>
             <label for="Local">&nbsp; Yes</label>
             &nbsp;
-            <input type="radio" name="d[first_job]" value="no" {{$student->data->d->first_job == 'no' ? 'checked' : '' }} disabled>
+            <input type="radio" name="d[first_job]" value="no" {{($student->data->d->first_job ?? "") == 'no' ? 'checked' : '' }} disabled>
             <label for="Local"> &nbsp;No</label>
 
         </table>
@@ -741,23 +741,23 @@
                 <h4>27.How long did you stay in your first job?:</h4>
 
 
-                <label><input type="radio" name="d[how_long_first_job_stay]" value="Less than a month" {{$student->data->d->how_long_first_job_stay == 'Less than a month' ? 'checked' : '' }} disabled> Less than a month</label><br>
-                <label><input type="radio" name="d[how_long_first_job_stay]" value="1 to 6 months" {{$student->data->d->how_long_first_job_stay == '1 to 6 months' ? 'checked' : '' }} disabled> 1 to 6 months</label><br>
-                <label><input type="radio" name="d[how_long_first_job_stay]" value="7 to 11 months" {{$student->data->d->how_long_first_job_stay == '7 to 11 months' ? 'checked' : '' }} disabled> 7 to 11 months</label><br>
+                <label><input type="radio" name="d[how_long_first_job_stay]" value="Less than a month" {{($student->data->d->how_long_first_job_stay ?? "") == 'Less than a month' ? 'checked' : '' }} disabled> Less than a month</label><br>
+                <label><input type="radio" name="d[how_long_first_job_stay]" value="1 to 6 months" {{($student->data->d->how_long_first_job_stay ?? "") == '1 to 6 months' ? 'checked' : '' }} disabled> 1 to 6 months</label><br>
+                <label><input type="radio" name="d[how_long_first_job_stay]" value="7 to 11 months" {{($student->data->d->how_long_first_job_stay ?? "") == '7 to 11 months' ? 'checked' : '' }} disabled> 7 to 11 months</label><br>
 
             </div>
 
 
             <div style="margin-top: 45px; margin-inline-start: 20px; margin-left: -180px; ">
-                <label><input type="radio" name="d[how_long_first_job_stay]" value="1 year to less than 2 years" {{$student->data->d->how_long_first_job_stay == '1 year to less than 2 years' ? 'checked' : '' }} disabled> 1 year to less than 2 years</label><br>
-                <label><input type="radio" name="d[how_long_first_job_stay]" value="2 years to less than 3 years" {{$student->data->d->how_long_first_job_stay == '2 years to less than 3 years' ? 'checked' : '' }} disabled> 2 years to less than 3 years</label><br>
-                <label><input type="radio" name="d[how_long_first_job_stay]" value="3 years to less than 4 years" {{$student->data->d->how_long_first_job_stay == '3 years to less than 4 years' ? 'checked' : '' }} disabled> 3 years to less than 4 years</label><br>
+                <label><input type="radio" name="d[how_long_first_job_stay]" value="1 year to less than 2 years" {{($student->data->d->how_long_first_job_stay ?? "") == '1 year to less than 2 years' ? 'checked' : '' }} disabled> 1 year to less than 2 years</label><br>
+                <label><input type="radio" name="d[how_long_first_job_stay]" value="2 years to less than 3 years" {{($student->data->d->how_long_first_job_stay ?? "") == '2 years to less than 3 years' ? 'checked' : '' }} disabled> 2 years to less than 3 years</label><br>
+                <label><input type="radio" name="d[how_long_first_job_stay]" value="3 years to less than 4 years" {{($student->data->d->how_long_first_job_stay ?? "") == '3 years to less than 4 years' ? 'checked' : '' }} disabled> 3 years to less than 4 years</label><br>
 
 
             </div>
 
             <div style="margin-top: 45px; margin-inline-start: 20px; ">
-                <label><input type="radio" name="d[how_long_first_job_stay]" value="Others, please specify" {{$student->data->d->how_long_first_job_stay == 'Others, please specify' ? 'checked' : '' }} disabled> Others, please specify</label>
+                <label><input type="radio" name="d[how_long_first_job_stay]" value="Others, please specify" {{($student->data->d->how_long_first_job_stay ?? "") == 'Others, please specify' ? 'checked' : '' }} disabled> Others, please specify</label>
                 <input type="text" size="50" name="d[how_long_first_job_stay_remarks]"  placeholder="Please specify" value="{{$student->data->d->how_long_first_job_stay_remarks ?? '' }}" disabled>
 
 
@@ -772,19 +772,19 @@
                 <h4>28. How did you find your first job?:</h4>
 
 
-                <label><input type="radio" name="d[how_did_you_find_first_job]" value="Response to an advertisement" {{$student->data->d->how_did_you_find_first_job == 'Response to an advertisement' ? 'checked' : '' }} disabled> Response to an advertisement</label><br>
-                <label><input type="radio" name="d[how_did_you_find_first_job]" value="As walk-in applicant" {{$student->data->d->how_did_you_find_first_job == 'As walk-in applicant' ? 'checked' : '' }} disabled> As walk-in applicant</label><br>
-                <label><input type="radio" name="d[how_did_you_find_first_job]" value="Recommended by someone" {{$student->data->d->how_did_you_find_first_job == 'Recommended by someone' ? 'checked' : '' }} disabled> Recommended by someone</label><br>
-                <label><input type="radio" name="d[how_did_you_find_first_job]" value="Others, please specify" {{$student->data->d->how_did_you_find_first_job == 'Others, please specify' ? 'checked' : '' }} disabled> Others, please specify</label>
+                <label><input type="radio" name="d[how_did_you_find_first_job]" value="Response to an advertisement" {{($student->data->d->how_did_you_find_first_job ?? "") == 'Response to an advertisement' ? 'checked' : '' }} disabled> Response to an advertisement</label><br>
+                <label><input type="radio" name="d[how_did_you_find_first_job]" value="As walk-in applicant" {{($student->data->d->how_did_you_find_first_job ?? "") == 'As walk-in applicant' ? 'checked' : '' }} disabled> As walk-in applicant</label><br>
+                <label><input type="radio" name="d[how_did_you_find_first_job]" value="Recommended by someone" {{($student->data->d->how_did_you_find_first_job ?? "") == 'Recommended by someone' ? 'checked' : '' }} disabled> Recommended by someone</label><br>
+                <label><input type="radio" name="d[how_did_you_find_first_job]" value="Others, please specify" {{($student->data->d->how_did_you_find_first_job ?? "") == 'Others, please specify' ? 'checked' : '' }} disabled> Others, please specify</label>
                 <input type="text" size="50" placeholder="Please specify" name="d[how_did_you_find_first_job_remarks]" value="{{$student->data->d->how_did_you_find_first_job_remarks ?? '' }}" disabled>
 
             </div>
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 
             <div style="margin-top: 45px; margin-inline-start: 20px; margin-left: -180px; ">
-                <label><input type="radio" name="d[how_did_you_find_first_job]" value="Arranged by school’s job placement officer" {{$student->data->d->how_did_you_find_first_job == 'Arranged by school’s job placement officer' ? 'checked' : '' }} disabled> Arranged by school’s job placement officer</label><br>
-                <label><input type="radio" name="d[how_did_you_find_first_job]" value="Family business" {{$student->data->d->how_did_you_find_first_job == 'Family business' ? 'checked' : '' }} disabled> Family business</label><br>
-                <label><input type="radio" name="d[how_did_you_find_first_job]" value="Job Fair or Public Employment Service Office (PESO)" {{$student->data->d->how_did_you_find_first_job == 'Job Fair or Public Employment Service Office (PESO)' ? 'checked' : '' }} disabled> Job Fair or Public Employment Service Office (PESO)</label><br>
+                <label><input type="radio" name="d[how_did_you_find_first_job]" value="Arranged by school’s job placement officer" {{($student->data->d->how_did_you_find_first_job ?? "") == 'Arranged by school’s job placement officer' ? 'checked' : '' }} disabled> Arranged by school’s job placement officer</label><br>
+                <label><input type="radio" name="d[how_did_you_find_first_job]" value="Family business" {{($student->data->d->how_did_you_find_first_job ?? "") == 'Family business' ? 'checked' : '' }} disabled> Family business</label><br>
+                <label><input type="radio" name="d[how_did_you_find_first_job]" value="Job Fair or Public Employment Service Office (PESO)" {{($student->data->d->how_did_you_find_first_job ?? "") == 'Job Fair or Public Employment Service Office (PESO)' ? 'checked' : '' }} disabled> Job Fair or Public Employment Service Office (PESO)</label><br>
 
 
             </div>
@@ -798,23 +798,23 @@
                 <h4>29.How long did it take to land your first job?:</h4>
 
 
-                <label><input type="radio" name="d[how_long_did_it_take_first_job]" value="Less than a month" {{$student->data->d->how_long_did_it_take_first_job == 'Less than a month' ? 'checked' : '' }} disabled> Less than a month</label><br>
-                <label><input type="radio" name="d[how_long_did_it_take_first_job]" value="1 to 6 months" {{$student->data->d->how_long_did_it_take_first_job == '1 to 6 months' ? 'checked' : '' }} disabled> 1 to 6 months</label><br>
-                <label><input type="radio" name="d[how_long_did_it_take_first_job]" value="7 to 11 months" {{$student->data->d->how_long_did_it_take_first_job == '7 to 11 months' ? 'checked' : '' }} disabled> 7 to 11 months</label><br>
+                <label><input type="radio" name="d[how_long_did_it_take_first_job]" value="Less than a month" {{($student->data->d->how_long_did_it_take_first_job ?? "") == 'Less than a month' ? 'checked' : '' }} disabled> Less than a month</label><br>
+                <label><input type="radio" name="d[how_long_did_it_take_first_job]" value="1 to 6 months" {{($student->data->d->how_long_did_it_take_first_job ?? "") == '1 to 6 months' ? 'checked' : '' }} disabled> 1 to 6 months</label><br>
+                <label><input type="radio" name="d[how_long_did_it_take_first_job]" value="7 to 11 months" {{($student->data->d->how_long_did_it_take_first_job ?? "") == '7 to 11 months' ? 'checked' : '' }} disabled> 7 to 11 months</label><br>
 
             </div>
 
 
             <div style="margin-top: 45px; margin-inline-start: 20px; margin-left: -180px; ">
-                <label><input type="radio" name="d[how_long_did_it_take_first_job]" value="1 year to less than 2 years" {{$student->data->d->how_long_did_it_take_first_job == '1 year to less than 2 years' ? 'checked' : '' }} disabled> 1 year to less than 2 years</label><br>
-                <label><input type="radio" name="d[how_long_did_it_take_first_job]" value="2 years to less than 3 years" {{$student->data->d->how_long_did_it_take_first_job == '2 years to less than 3 years' ? 'checked' : '' }} disabled> 2 years to less than 3 years</label><br>
-                <label><input type="radio" name="d[how_long_did_it_take_first_job]" value="3 years to less than 4 years" {{$student->data->d->how_long_did_it_take_first_job == '3 years to less than 4 years' ? 'checked' : '' }} disabled> 3 years to less than 4 years</label><br>
+                <label><input type="radio" name="d[how_long_did_it_take_first_job]" value="1 year to less than 2 years" {{($student->data->d->how_long_did_it_take_first_job ?? "") == '1 year to less than 2 years' ? 'checked' : '' }} disabled> 1 year to less than 2 years</label><br>
+                <label><input type="radio" name="d[how_long_did_it_take_first_job]" value="2 years to less than 3 years" {{($student->data->d->how_long_did_it_take_first_job ?? "") == '2 years to less than 3 years' ? 'checked' : '' }} disabled> 2 years to less than 3 years</label><br>
+                <label><input type="radio" name="d[how_long_did_it_take_first_job]" value="3 years to less than 4 years" {{($student->data->d->how_long_did_it_take_first_job ?? "") == '3 years to less than 4 years' ? 'checked' : '' }} disabled> 3 years to less than 4 years</label><br>
 
 
             </div>
 
             <div style="margin-top: 45px; margin-inline-start: 20px; ">
-                <label><input type="radio" name="d[how_long_did_it_take_first_job]" value="Others, please specify" {{$student->data->d->how_long_did_it_take_first_job == 'Others, please specify' ? 'checked' : '' }} disabled> Others, please specify</label>
+                <label><input type="radio" name="d[how_long_did_it_take_first_job]" value="Others, please specify" {{($student->data->d->how_long_did_it_take_first_job ?? "") == 'Others, please specify' ? 'checked' : '' }} disabled> Others, please specify</label>
                 <input type="text" size="50" placeholder="Please specify" name="d[how_long_did_it_take_first_job_remarks]" value="{{$student->data->d->how_long_did_it_take_first_job_remarks ?? '' }}" disabled>
 
 
@@ -836,23 +836,23 @@
         <tbody>
         <tr>
             <td class="text-left">Rank or Clerical</td>
-            <td><input type="radio" name="d[job_rank_q1]" value="first_job" {{$student->data->d->job_rank_q1 == 'first_job' ? 'checked' : '' }} disabled></td>
-            <td><input type="radio" name="d[job_rank_q1]" value="present" {{$student->data->d->job_rank_q1 == 'present' ? 'checked' : '' }} disabled></td>
+            <td><input type="radio" name="d[job_rank_q1]" value="first_job" {{($student->data->d->job_rank_q1 ?? "") == 'first_job' ? 'checked' : '' }} disabled></td>
+            <td><input type="radio" name="d[job_rank_q1]" value="present" {{($student->data->d->job_rank_q1 ?? "") == 'present' ? 'checked' : '' }} disabled></td>
         </tr>
         <tr>
             <td class="text-left">Professional, Technical or Supervisory</td>
-            <td><input type="radio" name="d[job_rank_q2]" value="first_job" {{$student->data->d->job_rank_q1 == 'first_job' ? 'checked' : '' }} disabled></td>
-            <td><input type="radio" name="d[job_rank_q2]" value="present" {{$student->data->d->job_rank_q1 == 'present' ? 'checked' : '' }} disabled></td>
+            <td><input type="radio" name="d[job_rank_q2]" value="first_job" {{($student->data->d->job_rank_q2 ?? "") == 'first_job' ? 'checked' : '' }} disabled></td>
+            <td><input type="radio" name="d[job_rank_q2]" value="present" {{($student->data->d->job_rank_q2 ?? "") == 'present' ? 'checked' : '' }} disabled></td>
         </tr>
         <tr>
             <td class="text-left">Managerial or Executive</td>
-            <td><input type="radio" name="d[job_rank_q3]" value="first_job" {{$student->data->d->job_rank_q1 == 'first_job' ? 'checked' : '' }} disabled></td>
-            <td><input type="radio" name="d[job_rank_q3]" value="present" {{$student->data->d->job_rank_q1 == 'present' ? 'checked' : '' }} disabled></td>
+            <td><input type="radio" name="d[job_rank_q3]" value="first_job" {{($student->data->d->job_rank_q3 ?? "") == 'first_job' ? 'checked' : '' }} disabled></td>
+            <td><input type="radio" name="d[job_rank_q3]" value="present" {{($student->data->d->job_rank_q3 ?? "") == 'present' ? 'checked' : '' }} disabled></td>
         </tr>
         <tr>
             <td class="text-left">Self-employed</td>
-            <td><input type="radio" name="d[job_rank_q4]" value="first_job" {{$student->data->d->job_rank_q1 == 'first_job' ? 'checked' : '' }} disabled></td>
-            <td><input type="radio" name="d[job_rank_q4]" value="present" {{$student->data->d->job_rank_q1 == 'present' ? 'checked' : '' }} disabled></td>
+            <td><input type="radio" name="d[job_rank_q4]" value="first_job" {{($student->data->d->job_rank_q4 ?? "") == 'first_job' ? 'checked' : '' }} disabled></td>
+            <td><input type="radio" name="d[job_rank_q4]" value="present" {{($student->data->d->job_rank_q4 ?? "") == 'present' ? 'checked' : '' }} disabled></td>
         </tr>
 </table>
 <br> <br>
@@ -863,17 +863,17 @@
             <h4>31.What is your initial gross monthly earning in your first job after college?:</h4>
 
 
-            <label><input type="radio" name="d[monthly_earning_first_job]" value="Below P5,000.00" {{$student->data->d->monthly_earning_first_job == 'Below P5,000.00' ? 'checked' : '' }} disabled> Below P5,000.00</label><br>
-            <label><input type="radio" name="d[monthly_earning_first_job]" value="P5,000.00 to less than P10,000.00" {{$student->data->d->monthly_earning_first_job == 'P5,000.00 to less than P10,000.00' ? 'checked' : '' }} disabled> P5,000.00 to less than P10,000.00</label><br>
-            <label><input type="radio" name="d[monthly_earning_first_job]" value="P10,000.00 to less than P15,000.00" {{$student->data->d->monthly_earning_first_job == 'P10,000.00 to less than P15,000.00' ? 'checked' : '' }} disabled> P10,000.00 to less than P15,000.00</label><br>
+            <label><input type="radio" name="d[monthly_earning_first_job]" value="Below P5,000.00" {{($student->data->d->monthly_earning_first_job ?? "") == 'Below P5,000.00' ? 'checked' : '' }} disabled> Below P5,000.00</label><br>
+            <label><input type="radio" name="d[monthly_earning_first_job]" value="P5,000.00 to less than P10,000.00" {{($student->data->d->monthly_earning_first_job ?? "") == 'P5,000.00 to less than P10,000.00' ? 'checked' : '' }} disabled> P5,000.00 to less than P10,000.00</label><br>
+            <label><input type="radio" name="d[monthly_earning_first_job]" value="P10,000.00 to less than P15,000.00" {{($student->data->d->monthly_earning_first_job ?? "") == 'P10,000.00 to less than P15,000.00' ? 'checked' : '' }} disabled> P10,000.00 to less than P15,000.00</label><br>
 
         </div>
 
 
         <div style="margin-top: 45px; margin-inline-start: 20px; margin-left: -180px; ">
-            <label><input type="radio" name="d[monthly_earning_first_job]" value="P15,000.00 to less than P20,000.00" {{$student->data->d->monthly_earning_first_job == 'P15,000.00 to less than P20,000.00' ? 'checked' : '' }} disabled> P15,000.00 to less than P20,000.00</label><br>
-            <label><input type="radio" name="d[monthly_earning_first_job]" value="P20,000.00 to less than P25,000.00" {{$student->data->d->monthly_earning_first_job == 'P20,000.00 to less than P25,000.00' ? 'checked' : '' }} disabled> P20,000.00 to less than P25,000.00</label><br>
-            <label><input type="radio" name="d[monthly_earning_first_job]" value="P25,000.00 and above" {{$student->data->d->monthly_earning_first_job == 'P25,000.00 and above' ? 'checked' : '' }} disabled> P25,000.00 and above</label><br>
+            <label><input type="radio" name="d[monthly_earning_first_job]" value="P15,000.00 to less than P20,000.00" {{($student->data->d->monthly_earning_first_job ?? "") == 'P15,000.00 to less than P20,000.00' ? 'checked' : '' }} disabled> P15,000.00 to less than P20,000.00</label><br>
+            <label><input type="radio" name="d[monthly_earning_first_job]" value="P20,000.00 to less than P25,000.00" {{($student->data->d->monthly_earning_first_job ?? "") == 'P20,000.00 to less than P25,000.00' ? 'checked' : '' }} disabled> P20,000.00 to less than P25,000.00</label><br>
+            <label><input type="radio" name="d[monthly_earning_first_job]" value="P25,000.00 and above" {{($student->data->d->monthly_earning_first_job ?? "") == 'P25,000.00 and above' ? 'checked' : '' }} disabled> P25,000.00 and above</label><br>
         </div>
 
 
@@ -886,7 +886,7 @@
             <label for="Local">&nbsp; Yes</label>
         </td>
         <td>
-            <input type="radio" name="d[curriculum_relevant_job]" value="yes" {{$student->data->d->curriculum_relevant_job == 'yes' ? 'checked' : '' }} disabled>
+            <input type="radio" name="d[curriculum_relevant_job]" value="yes" {{($student->data->d->curriculum_relevant_job ?? "") == 'yes' ? 'checked' : '' }} disabled>
         </td>
     </tr>
     <tr>
@@ -894,7 +894,7 @@
             <label for="Local">&nbsp; No</label>
         </td>
         <td>
-            <input type="radio" name="d[curriculum_relevant_job]" value="no" {{$student->data->d->curriculum_relevant_job == 'no' ? 'checked' : '' }} disabled>
+            <input type="radio" name="d[curriculum_relevant_job]" value="no" {{($student->data->d->curriculum_relevant_job ?? "") == 'no' ? 'checked' : '' }} disabled>
         </td>
     </tr>
 </table>

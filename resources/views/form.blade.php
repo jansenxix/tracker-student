@@ -124,7 +124,7 @@
                                 <div>
                                     <legend class="test">9. &nbsp;Region of origin:</legend>
 
-                                    <label><input type="radio" name="a[region]" value="Region 1"> Region 1</label><br>
+                                    <label><input type="radio" name="a[region]" value="Region 1" checked> Region 1</label><br>
                                     <label><input type="radio" name="a[region]" value="Region 2"> Region 2</label><br>
                                     <label><input type="radio" name="a[region]" value="Region 3"> Region 3</label><br>
                                     <label><input type="radio" name="a[region]" value="Region 4"> Region 4</label><br>
