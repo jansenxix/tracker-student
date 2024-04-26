@@ -104,3 +104,7 @@ Route::get('/post/{id}', function($id) {
 
 Route::post('/post/{id}', [PostController::class, 'getPost']);
 Route::post('/import', [StudentListController::class, 'import']);
+Route::get('/download/report1', [StudentListController::class, 'downloadExcel']);
+Route::get('/download/report2', [StudentListController::class, 'downloadExcel2']);
+Route::get('/download/report3', [StudentListController::class, 'downloadExcel3']);
+Route::get('/download/report4', [StudentListController::class, 'downloadExcel4']);

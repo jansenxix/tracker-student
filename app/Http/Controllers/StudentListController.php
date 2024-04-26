@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
 use PhpOffice\PhpSpreadsheet\IOFactory;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
 
 class StudentListController extends Controller
 {
@@ -144,4 +146,206 @@ class StudentListController extends Controller
 
         return redirect("/studentlist");
     }
+
+    public function downloadExcel()
+    {
+        // Load the template Excel file
+        $templatePath = public_path('excelformat/ProfileRespondent.xlsx');
+        $spreadsheet = IOFactory::load($templatePath);
+
+        // Get the active sheet
+        $sheet = $spreadsheet->getActiveSheet();
+
+        // Populate the data into the template (example)
+
+        $students = Studentlist::all();
+
+
+        $row = 5;
+        foreach ($students as $student) {
+            $course = courselist::find($student->course);
+            $admin = admin::where("student_id", $student->id)->first();
+            $data = json_decode($admin->data);
+            Log::info(json_encode($data));
+            $sheet->setCellValue('A'.$row, $student->studentNumber);
+            $sheet->setCellValue('B'.$row, $student->fname . " " . $student->lname);
+            $sheet->setCellValue('C'.$row, $course->code);
+            $sheet->setCellValue('D'.$row, $student->acadYear . "/" . ($student->acadTerm == 1 ? "1st Term" : "2nd Term"));
+            $sheet->setCellValue('E'.$row, $data->a->address ?? "");
+            $sheet->setCellValue('F'.$row, $data->a->email ?? "");
+            $sheet->setCellValue('G'.$row, $data->a->contact_number ?? "");
+            $sheet->setCellValue('H'.$row, $data->a->phone_number ?? "");
+            $row++;
+        }
+
+        // Set headers for download
+        $headers = [
+            'Content-Type' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+            'Content-Disposition' => 'attachment; filename="example.xlsx"',
+        ];
+
+        // Create Excel writer
+        $writer = new Xlsx($spreadsheet);
+
+        // Create a temporary file
+        $tempFile = tempnam(sys_get_temp_dir(), 'excel');
+
+        // Save Excel to temporary file
+        $writer->save($tempFile);
+
+        // Return Excel file as response
+        return response()->download($tempFile, 'example.xlsx', $headers)->deleteFileAfterSend(true);
+    }
+
+    public function downloadExcel2()
+    {
+        // Load the template Excel file
+        $templatePath = public_path('excelformat/EmploymentStatus.xlsx');
+        $spreadsheet = IOFactory::load($templatePath);
+
+        // Get the active sheet
+        $sheet = $spreadsheet->getActiveSheet();
+
+        // Populate the data into the template (example)
+
+        $students = Studentlist::all();
+
+
+        $row = 5;
+        foreach ($students as $student) {
+            $course = courselist::find($student->course);
+            $admin = admin::where("student_id", $student->id)->first();
+            $data = json_decode($admin->data);
+            Log::info(json_encode($data));
+            $sheet->setCellValue('A'.$row, $student->studentNumber);
+            $sheet->setCellValue('B'.$row, $student->fname . " " . $student->lname);
+            $sheet->setCellValue('C'.$row, $course->code);
+            $sheet->setCellValue('D'.$row, $student->acadYear . "/" . ($student->acadTerm == 1 ? "1st Term" : "2nd Term"));
+            $sheet->setCellValue('E'.$row, $course->code);
+            $sheet->setCellValue('F'.$row, $data->d->employed ?? "");
+            $sheet->setCellValue('G'.$row, $data->d->present_employment_status ?? "");
+            $sheet->setCellValue('H'.$row, $data->d->present_occupation ?? "");
+            $sheet->setCellValue('I'.$row, $data->d->first_job ?? "");
+            $row++;
+        }
+
+        // Set headers for download
+        $headers = [
+            'Content-Type' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+            'Content-Disposition' => 'attachment; filename="example.xlsx"',
+        ];
+
+        // Create Excel writer
+        $writer = new Xlsx($spreadsheet);
+
+        // Create a temporary file
+        $tempFile = tempnam(sys_get_temp_dir(), 'excel');
+
+        // Save Excel to temporary file
+        $writer->save($tempFile);
+
+        // Return Excel file as response
+        return response()->download($tempFile, 'example.xlsx', $headers)->deleteFileAfterSend(true);
+    }
+
+
+    public function downloadExcel3()
+    {
+        // Load the template Excel file
+        $templatePath = public_path('excelformat/JobPlacement.xlsx');
+        $spreadsheet = IOFactory::load($templatePath);
+
+        // Get the active sheet
+        $sheet = $spreadsheet->getActiveSheet();
+
+        // Populate the data into the template (example)
+
+        $students = Studentlist::all();
+
+
+        $row = 5;
+        foreach ($students as $student) {
+            $course = courselist::find($student->course);
+            $admin = admin::where("student_id", $student->id)->first();
+            $data = json_decode($admin->data);
+            Log::info(json_encode($data));
+            $sheet->setCellValue('A'.$row, $student->studentNumber);
+            $sheet->setCellValue('B'.$row, $student->fname . " " . $student->lname);
+            $sheet->setCellValue('C'.$row, $course->code);
+            $sheet->setCellValue('D'.$row, $student->acadYear . "/" . ($student->acadTerm == 1 ? "1st Term" : "2nd Term"));
+            $sheet->setCellValue('E'.$row, $data->d->curriculum_relevant_job ?? "");
+            $row++;
+        }
+
+        // Set headers for download
+        $headers = [
+            'Content-Type' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+            'Content-Disposition' => 'attachment; filename="example.xlsx"',
+        ];
+
+        // Create Excel writer
+        $writer = new Xlsx($spreadsheet);
+
+        // Create a temporary file
+        $tempFile = tempnam(sys_get_temp_dir(), 'excel');
+
+        // Save Excel to temporary file
+        $writer->save($tempFile);
+
+        // Return Excel file as response
+        return response()->download($tempFile, 'example.xlsx', $headers)->deleteFileAfterSend(true);
+    }
+
+
+    public function downloadExcel4()
+    {
+        // Load the template Excel file
+        $templatePath = public_path('excelformat/UsefulCompetencies.xlsx');
+        $spreadsheet = IOFactory::load($templatePath);
+
+        // Get the active sheet
+        $sheet = $spreadsheet->getActiveSheet();
+
+        // Populate the data into the template (example)
+
+        $students = Studentlist::all();
+
+
+        $row = 5;
+        foreach ($students as $student) {
+            $course = courselist::find($student->course);
+            $admin = admin::where("student_id", $student->id)->first();
+            $data = json_decode($admin->data);
+            Log::info(json_encode($data));
+            $sheet->setCellValue('A'.$row, $student->studentNumber);
+            $sheet->setCellValue('B'.$row, $student->fname . " " . $student->lname);
+            $sheet->setCellValue('C'.$row, $course->code);
+            $sheet->setCellValue('D'.$row, $student->acadYear . "/" . ($student->acadTerm == 1 ? "1st Term" : "2nd Term"));
+            $sheet->setCellValue('E'.$row, $data->d->yes_useful_op1 ?? "");
+            $sheet->setCellValue('F'.$row, $data->d->yes_useful_op2 ?? "");
+            $sheet->setCellValue('G'.$row, $data->d->yes_useful_op3 ?? "");
+            $sheet->setCellValue('H'.$row, $data->d->yes_useful_op4 ?? "");
+            $sheet->setCellValue('I'.$row, $data->d->yes_useful_op5 ?? "");
+            $row++;
+        }
+
+        // Set headers for download
+        $headers = [
+            'Content-Type' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+            'Content-Disposition' => 'attachment; filename="example.xlsx"',
+        ];
+
+        // Create Excel writer
+        $writer = new Xlsx($spreadsheet);
+
+        // Create a temporary file
+        $tempFile = tempnam(sys_get_temp_dir(), 'excel');
+
+        // Save Excel to temporary file
+        $writer->save($tempFile);
+
+        // Return Excel file as response
+        return response()->download($tempFile, 'example.xlsx', $headers)->deleteFileAfterSend(true);
+    }
+
 }

@@ -22,6 +22,9 @@ class NotificationServices
             $users[] = $comment->admin_id;
         }
 
+
+        Log::info($users);
+
         $users = array_unique($users);
 
         Log::info(json_encode($users));
