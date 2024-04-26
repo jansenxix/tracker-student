@@ -55,6 +55,23 @@ Route::get('/testlogin', function () {
 });
 
 
+Route::get('/respondent', function () {
+    return view('respondent');
+});
+
+Route::get('/employment', function () {
+    return view('employment');
+});
+
+Route::get('/job', function () {
+    return view('job');
+});
+
+Route::get('/useful', function () {
+    return view('useful');
+});
+
+
 Route::get('/registered-student/detail/{id}', [AdminController::class, 'studentDetail']);
 
 
