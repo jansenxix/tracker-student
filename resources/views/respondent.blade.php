@@ -18,8 +18,8 @@
                 <div class="card-header">
                     <h3 class="card-title">Profile respondents</h3>
                     <div class="card-tools">
+                            <button class="btn btn-secondary" onclick="location.href='/download/report1'">Download</button>
 
-                      
                     </div>
                 </div>
 
@@ -40,10 +40,19 @@
                             </tr>
                             </thead>
                             <tbody>
-                           
-                              
+                            @foreach($record as $value)
+                            <tr>
+                                <td>{{ $value['studentNo'] }}</td>
+                                <td>{{ $value['name'] }}</td>
+                                <td>{{ $value['course'] }}</td>
+                                <td>{{ $value['yearTerm'] }}</td>
+                                <td>{{ $value['address'] }}</td>
+                                <td>{{ $value['email'] }}</td>
+                                <td>{{ $value['contactNumber'] }}</td>
+                                <td>{{ $value['phoneNumber'] }}</td>
                             </tr>
-                      
+                            @endforeach
+
                             </tbody>
                         </table>
 
@@ -83,8 +92,8 @@
                     $('#delete_pdc').val(id);
                 });
 
-              
-               
+
+
             });
         </script>
 </body>

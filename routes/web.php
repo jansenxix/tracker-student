@@ -55,22 +55,13 @@ Route::get('/testlogin', function () {
 });
 
 
-Route::get('/respondent', function () {
-    return view('respondent');
-});
+Route::get('/respondent', [StudentListController::class, 'report1']);
 
-Route::get('/employment', function () {
-    return view('employment');
-});
+Route::get('/employment', [StudentListController::class, 'report2']);
 
-Route::get('/job', function () {
-    return view('job');
-});
+Route::get('/job', [StudentListController::class, 'report3']);
 
-Route::get('/useful', function () {
-    return view('useful');
-});
-
+Route::get('/useful', [StudentListController::class, 'report4']);
 
 Route::get('/registered-student/detail/{id}', [AdminController::class, 'studentDetail']);
 

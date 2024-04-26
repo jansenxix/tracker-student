@@ -18,8 +18,10 @@
                 <div class="card-header">
                     <h3 class="card-title">Useful competencies</h3>
                     <div class="card-tools">
+                        <button class="btn btn-secondary" onclick="location.href='/download/report4'">Download</button>
 
-                      
+
+
                     </div>
                 </div>
 
@@ -39,14 +41,24 @@
                                 <th>Information Technology skills</th>
                                 <th>Problem Solving skills</th>
                                 <th>Critical Thinking skills</th>
-                                <th>Others</th>
                             </tr>
                             </thead>
                             <tbody>
-                           
-                              
+
+                            @foreach($record as $value)
+                            <tr>
+                                <td>{{ $value['studentNo'] }}</td>
+                                <td>{{ $value['name'] }}</td>
+                                <td>{{ $value['course'] }}</td>
+                                <td>{{ $value['yearTerm'] }}</td>
+                                <td>{{ $value['option1'] }}</td>
+                                <td>{{ $value['option2'] }}</td>
+                                <td>{{ $value['option3'] }}</td>
+                                <td>{{ $value['option4'] }}</td>
+                                <td>{{ $value['option5'] }}</td>
+                                <td>{{ $value['option6'] }}</td>
                             </tr>
-                      
+                            @endforeach
                             </tbody>
                         </table>
 
@@ -86,8 +98,8 @@
                     $('#delete_pdc').val(id);
                 });
 
-              
-               
+
+
             });
         </script>
 </body>

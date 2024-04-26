@@ -148,6 +148,101 @@ class StudentListController extends Controller
         return redirect("/studentlist");
     }
 
+    public function report1() {
+        $students = Studentlist::all();
+        $record = [];
+        foreach ($students as $student) {
+            $course = courselist::find($student->course);
+            $admin = admin::where("student_id", $student->id)->first();
+            $data = json_decode($admin->data);
+
+            $item =  [
+                "studentNo" => $student->studentNumber,
+                "name" => $student->fname . " " . $student->lname,
+                "course" => $course->code,
+                "yearTerm" => $student->acadYear . "/" . ($student->acadTerm == 1 ? "1st Term" : "2nd Term"),
+                "address" => $data->a->address ?? "",
+                "email" => $data->a->email ?? "",
+                "contactNumber" => $data->a->contact_number ?? "",
+                "phoneNumber" => $data->a->phone_number ?? "",
+            ];
+
+            $record[] = $item;
+        }
+        return view("respondent", ["record" => $record]);
+    }
+
+    public function report2() {
+        $students = Studentlist::all();
+        $record = [];
+        foreach ($students as $student) {
+            $course = courselist::find($student->course);
+            $admin = admin::where("student_id", $student->id)->first();
+            $data = json_decode($admin->data);
+
+            $item =  [
+                "studentNo" => $student->studentNumber,
+                "name" => $student->fname . " " . $student->lname,
+                "course" => $course->code,
+                "yearTerm" => $student->acadYear . "/" . ($student->acadTerm == 1 ? "1st Term" : "2nd Term"),
+                "employed" => $data->d->employed ?? "",
+                "presentEmploymentStatus" => $data->d->present_employment_status ?? "",
+                "presentOccupation" => $data->d->present_occupation ?? "",
+                "firstJob" => $data->d->first_job ?? "",
+            ];
+
+            $record[] = $item;
+        }
+        return view("employment", ["record" => $record]);
+    }
+
+    public function report3() {
+        $students = Studentlist::all();
+        $record = [];
+        foreach ($students as $student) {
+            $course = courselist::find($student->course);
+            $admin = admin::where("student_id", $student->id)->first();
+            $data = json_decode($admin->data);
+
+            $item =  [
+                "studentNo" => $student->studentNumber,
+                "name" => $student->fname . " " . $student->lname,
+                "course" => $course->code,
+                "yearTerm" => $student->acadYear . "/" . ($student->acadTerm == 1 ? "1st Term" : "2nd Term"),
+                "curriculumRelevantJob" => $data->d->curriculum_relevant_job ?? "",
+            ];
+
+            $record[] = $item;
+        }
+        return view("job", ["record" => $record]);
+    }
+
+    public function report4() {
+        $students = Studentlist::all();
+        $record = [];
+        foreach ($students as $student) {
+            $course = courselist::find($student->course);
+            $admin = admin::where("student_id", $student->id)->first();
+            $data = json_decode($admin->data);
+
+            $item =  [
+                "studentNo" => $student->studentNumber,
+                "name" => $student->fname . " " . $student->lname,
+                "course" => $course->code,
+                "yearTerm" => $student->acadYear . "/" . ($student->acadTerm == 1 ? "1st Term" : "2nd Term"),
+                "option1" => $data->d->yes_useful_op1 ?? "",
+                "option2" => $data->d->yes_useful_op2 ?? "",
+                "option3" => $data->d->yes_useful_op3 ?? "",
+                "option4" => $data->d->yes_useful_op4 ?? "",
+                "option5" => $data->d->yes_useful_op5 ?? "",
+                "option6" => $data->d->yes_useful_op6 ?? "",
+            ];
+
+            $record[] = $item;
+        }
+        return view("useful", ["record" => $record]);
+    }
+
     public function downloadExcel()
     {
         // Load the template Excel file
@@ -222,11 +317,10 @@ class StudentListController extends Controller
             $sheet->setCellValue('B'.$row, $student->fname . " " . $student->lname);
             $sheet->setCellValue('C'.$row, $course->code);
             $sheet->setCellValue('D'.$row, $student->acadYear . "/" . ($student->acadTerm == 1 ? "1st Term" : "2nd Term"));
-            $sheet->setCellValue('E'.$row, $course->code);
-            $sheet->setCellValue('F'.$row, $data->d->employed ?? "");
-            $sheet->setCellValue('G'.$row, $data->d->present_employment_status ?? "");
-            $sheet->setCellValue('H'.$row, $data->d->present_occupation ?? "");
-            $sheet->setCellValue('I'.$row, $data->d->first_job ?? "");
+            $sheet->setCellValue('E'.$row, $data->d->employed ?? "");
+            $sheet->setCellValue('F'.$row, $data->d->present_employment_status ?? "");
+            $sheet->setCellValue('G'.$row, $data->d->present_occupation ?? "");
+            $sheet->setCellValue('H'.$row, $data->d->first_job ?? "");
             $row++;
         }
 
