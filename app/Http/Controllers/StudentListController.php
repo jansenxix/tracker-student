@@ -154,6 +154,10 @@ class StudentListController extends Controller
         foreach ($students as $student) {
             $course = courselist::find($student->course);
             $admin = admin::where("student_id", $student->id)->first();
+            if(!isset($admin->data))
+            {
+                continue;
+            }
             $data = json_decode($admin->data);
 
             $item =  [
