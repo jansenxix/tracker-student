@@ -33,6 +33,7 @@
     </div>
     <script>
         $(document).ready(function() {
+            let isRequest = false;
             getPost();
         function getPost()
         {
@@ -46,6 +47,52 @@
                 success: function(response) {
                     console.log(response)
                     content.append(postContent(response.post))
+
+                    $(".post-remove").on("click", function () {
+                        const id = $(this).attr("data-id")
+                        if(isRequest === true)
+                            return;
+
+                        isRequest = true
+                        $.ajax({
+                            url: '/post/delete', // Replace with your server endpoint
+                            type: 'POST',
+                            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                            data: {
+                                id
+                            },
+                            success: function (response) {
+                                isRequest = false;
+                                const id  = $(this).attr("data-id")
+                                location.href = "/dashboard"
+
+                            }
+                        })
+
+                    })
+
+                    $(".comment-remove").on("click", function () {
+                        const id = $(this).attr("data-id")
+                        if(isRequest === true)
+                            return;
+
+                        isRequest = true
+                        $.ajax({
+                            url: '/comment/delete', // Replace with your server endpoint
+                            type: 'POST',
+                            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                            data: {
+                                id
+                            },
+                            success: function (response) {
+                                isRequest = false;
+                                const id  = $(this).attr("data-id")
+                                location.reload()
+
+                            }
+                        })
+
+                    })
 
                     $(".comment").on("click", function () {
                         const id = $(this).attr("data-id")
@@ -66,7 +113,6 @@
                                 description
                             },
                             success: function (response) {
-                                alert("Comment Successfully!")
                                 location.reload()
                             }
                         })
@@ -78,34 +124,46 @@
             });
         }
 
-        function postContent(post) {
-            let postType = `Announcement <svg style="margin-top: -10px" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-megaphone-fill" viewBox="0 0 16 16">
+
+            function postContent(post) {
+                let user = localStorage.getItem("user");
+                if(user)
+                    user = JSON.parse(user);
+
+                let remove = "";
+
+                if(user.id === post.admin_id) {
+                    remove = `<div style="margin-top: -15px"><a href="javascript:void(0)" class="post-remove" data-id="${post.id}">Remove</a></div>`;
+                }
+
+                let postType = `Announcement <svg style="margin-top: -10px" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-megaphone-fill" viewBox="0 0 16 16">
                                         <path d="M13 2.5a1.5 1.5 0 0 1 3 0v11a1.5 1.5 0 0 1-3 0zm-1 .724c-2.067.95-4.539 1.481-7 1.656v6.237a25 25 0 0 1 1.088.085c2.053.204 4.038.668 5.912 1.56zm-8 7.841V4.934c-.68.027-1.399.043-2.008.053A2.02 2.02 0 0 0 0 7v2c0 1.106.896 1.996 1.994 2.009l.496.008a64 64 0 0 1 1.51.048m1.39 1.081q.428.032.85.078l.253 1.69a1 1 0 0 1-.983 1.187h-.548a1 1 0 0 1-.916-.599l-1.314-2.48a66 66 0 0 1 1.692.064q.491.026.966.06"/>
                                     </svg> `
 
-            if(post.post_type == 1)
-            {
-                postType = `Job Posting <svg style="margin-top: -8x" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                if(post.post_type == 1)
+                {
+                    postType = `Job Posting <svg style="margin-top: -8x" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
                                     </svg>`
-            }
+                }
 
-            return `<div class="col-lg-12 post-view" style="padding-top: 10px">
+                return `<div class="col-lg-12" style="padding-top: 10px">
     <div class="card">
  <div class="card-body">
         <div class="mt-3 mb-2">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-6 col-sm-6">
                     <img src="/image/${post.admin.file}" style="width: 60px; height: 60px"
                          class="img-thumbnail rounded-circle  mb-2">
                     <label class="mb-2">${post.admin.fName}</label>
                 </div>
-                <div class="col-lg-6" style="font-weight: bold; text-align: right">
+                <div class="col-lg-6 col-sm-6" style="font-weight: bold; text-align: right">
+                        ${remove}
                         <div style="color: green">${postType}</div>
                        ${new Date(post.created_at).toLocaleString()}
                 </div>
             </div>
-            <p class="card-text">${post.description}</p>
+            <p class="card-text post-view" data-id="${ post.id }" style="cursor: pointer">${post.description}</p>
         </div>
 
         <div class="row">
@@ -116,7 +174,7 @@
                 <div style="border-top: 1px solid #23ffd3; margin-top: 10px"></div>
             </div>
 
-            <div class="col-lg-12" style="padding-top: 10px;">
+            <div class="col-lg-12" style="overflow-y: scroll; max-height:400px; padding-top: 10px;">
                 ${postComment(post.comments)}
             </div>
             <div class="col-lg-12" style="padding-top: 20px">
@@ -139,18 +197,33 @@
 </div>
 </div>
 `
-        }
+            }
 
-        function postComment(comments) {
-            let display = "";
 
-            for (const comment of comments) {
-                display += `<div class="col-lg-12 mb-2 row" style="border:#23ffd3 1px solid; padding: 15px; margin-left: 6px">
+            function postComment(comments) {
+                let display = "";
+
+
+                let user = localStorage.getItem("user");
+                if(user)
+                    user = JSON.parse(user);
+
+
+                for (const comment of comments) {
+
+                    let remove = "";
+
+                    if(user.id === comment.admin_id) {
+                        remove = `<div style="margin-top: -15px"><a href="javascript:void(0)" class="comment-remove" data-id="${comment.id}">Remove</a></div>`;
+                    }
+
+                    display += `<div class="col-lg-12 mb-2 row" style="border:#23ffd3 1px solid; padding: 15px; margin-left: 6px">
                     <div class="col-lg-6">
                             <img src="/image/${comment.admin.file}" style="width: 60px; height: 60px" class="img-thumbnail rounded-circle  mb-2">
                             <label class="mb-2">${comment.admin.fName}</label>
                     </div>
                     <div class="col-lg-6" style="text-align: right; font-weight: bold">
+                            ${remove}
                             ${new Date(comment.created_at).toLocaleString()}
                     </div>
                     <div class="col-lg-4">
@@ -159,10 +232,10 @@
                             ${comment.description}
                     </div>
                 </div>`
-            }
+                }
 
-            return display;
-        }
+                return display;
+            }
 
         function postImage(post){
             const images = post.images.split("|")

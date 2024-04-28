@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use App\Models\Post;
 use App\Services\NotificationServices;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -22,6 +23,13 @@ class CommentController extends Controller
         $post->save();
         $description = "New Comment from ". $user->fName;
         NotificationServices::notification($request->id, $description);
+
+        return "Success";
+    }
+
+    public function delete(Request $request)
+    {
+        Comment::find($request->id)->delete();
 
         return "Success";
     }

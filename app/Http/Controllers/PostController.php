@@ -67,4 +67,11 @@ class PostController extends Controller
 
         return response()->json(["post" => $post]);
     }
+
+    public function delete(Request $request)
+    {
+        Post::find($request->id)->delete();
+
+        return "Success";
+    }
 }

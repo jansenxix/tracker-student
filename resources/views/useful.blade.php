@@ -51,12 +51,12 @@
                                 <td>{{ $value['name'] }}</td>
                                 <td>{{ $value['course'] }}</td>
                                 <td>{{ $value['yearTerm'] }}</td>
-                                <td>{{ $value['option1'] }}</td>
-                                <td>{{ $value['option2'] }}</td>
-                                <td>{{ $value['option3'] }}</td>
-                                <td>{{ $value['option4'] }}</td>
-                                <td>{{ $value['option5'] }}</td>
-                                <td>{{ $value['option6'] }}</td>
+                                <td>{{ $value['option1'] == "on" ? "Yes" : "No" }}</td>
+                                <td>{{ $value['option2'] == "on" ? "Yes" : "No" }}</td>
+                                <td>{{ $value['option3'] == "on" ? "Yes" : "No" }}</td>
+                                <td>{{ $value['option4'] == "on" ? "Yes" : "No" }}</td>
+                                <td>{{ $value['option5'] == "on" ? "Yes" : "No" }}</td>
+                                <td>{{ $value['option6'] == "on" ? "Yes" : "No" }}</td>
                             </tr>
                             @endforeach
                             </tbody>

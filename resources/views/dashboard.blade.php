@@ -269,7 +269,58 @@
                             location.href = "/post/"+id
                         })
 
+                        $(".post-remove").on("click", function () {
+                            const id = $(this).attr("data-id")
+                            if(isRequest === true)
+                                return;
+
+                            isRequest = true
+                            $.ajax({
+                                url: '/post/delete', // Replace with your server endpoint
+                                type: 'POST',
+                                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                                data: {
+                                    id
+                                },
+                                success: function (response) {
+                                    isRequest = false;
+                                    const id  = $(this).attr("data-id")
+                                    location.reload()
+
+                                }
+                            })
+
+                        })
+
+                        $(".comment-remove").on("click", function () {
+                            const id = $(this).attr("data-id")
+                            if(isRequest === true)
+                                return;
+
+                            isRequest = true
+                            $.ajax({
+                                url: '/comment/delete', // Replace with your server endpoint
+                                type: 'POST',
+                                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                                data: {
+                                    id
+                                },
+                                success: function (response) {
+                                    isRequest = false;
+                                    const id  = $(this).attr("data-id")
+                                    location.reload()
+
+                                }
+                            })
+
+                        })
+
                         $(".comment").on("click", function () {
+
+                            if(isRequest === true)
+                                return;
+
+                            isRequest = true
                             const id = $(this).attr("data-id")
                             const description = $("#description"+id).val()
 
@@ -288,6 +339,7 @@
                                     description
                                 },
                                 success: function (response) {
+                                    isRequest = false;
                                     alert("Comment Successfully!")
                                     location.href = "/post/"+id
                                 }
@@ -301,6 +353,16 @@
             }
 
             function postContent(post) {
+                let user = localStorage.getItem("user");
+                if(user)
+                    user = JSON.parse(user);
+
+                let remove = "";
+
+                if(user.id === post.admin_id) {
+                    remove = `<div style="margin-top: -15px"><a href="javascript:void(0)" class="post-remove" data-id="${post.id}">Remove</a></div>`;
+                }
+
                 let postType = `Announcement <svg style="margin-top: -10px" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-megaphone-fill" viewBox="0 0 16 16">
                                         <path d="M13 2.5a1.5 1.5 0 0 1 3 0v11a1.5 1.5 0 0 1-3 0zm-1 .724c-2.067.95-4.539 1.481-7 1.656v6.237a25 25 0 0 1 1.088.085c2.053.204 4.038.668 5.912 1.56zm-8 7.841V4.934c-.68.027-1.399.043-2.008.053A2.02 2.02 0 0 0 0 7v2c0 1.106.896 1.996 1.994 2.009l.496.008a64 64 0 0 1 1.51.048m1.39 1.081q.428.032.85.078l.253 1.69a1 1 0 0 1-.983 1.187h-.548a1 1 0 0 1-.916-.599l-1.314-2.48a66 66 0 0 1 1.692.064q.491.026.966.06"/>
                                     </svg> `
@@ -317,12 +379,13 @@
  <div class="card-body">
         <div class="mt-3 mb-2">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-6 col-sm-6">
                     <img src="/image/${post.admin.file}" style="width: 60px; height: 60px"
                          class="img-thumbnail rounded-circle  mb-2">
                     <label class="mb-2">${post.admin.fName}</label>
                 </div>
-                <div class="col-lg-6" style="font-weight: bold; text-align: right">
+                <div class="col-lg-6 col-sm-6" style="font-weight: bold; text-align: right">
+                        ${remove}
                         <div style="color: green">${postType}</div>
                        ${new Date(post.created_at).toLocaleString()}
                 </div>
@@ -363,16 +426,32 @@
 `
             }
 
+
+
             function postComment(comments) {
                 let display = "";
 
+
+                let user = localStorage.getItem("user");
+                if(user)
+                    user = JSON.parse(user);
+
+
                 for (const comment of comments) {
+
+                    let remove = "";
+
+                    if(user.id === comment.admin_id) {
+                        remove = `<div style="margin-top: -15px"><a href="javascript:void(0)" class="comment-remove" data-id="${comment.id}">Remove</a></div>`;
+                    }
+
                     display += `<div class="col-lg-12 mb-2 row" style="border:#23ffd3 1px solid; padding: 15px; margin-left: 6px">
                     <div class="col-lg-6">
                             <img src="/image/${comment.admin.file}" style="width: 60px; height: 60px" class="img-thumbnail rounded-circle  mb-2">
                             <label class="mb-2">${comment.admin.fName}</label>
                     </div>
                     <div class="col-lg-6" style="text-align: right; font-weight: bold">
+                            ${remove}
                             ${new Date(comment.created_at).toLocaleString()}
                     </div>
                     <div class="col-lg-4">

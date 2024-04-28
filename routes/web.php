@@ -92,6 +92,8 @@ Route::get('/logout', [ProfileController::class, 'logout']);
 
 Route::post('/post', [PostController::class, 'post']);
 Route::get('/posts', [PostController::class, 'posts']);
+Route::post('/post/delete', [PostController::class, 'delete']);
+Route::post('/comment/delete', [CommentController::class, 'delete']);
 
 Route::post('/comment', [CommentController::class, 'comment']);
 

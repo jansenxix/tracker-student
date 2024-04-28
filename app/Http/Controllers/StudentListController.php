@@ -448,11 +448,13 @@ class StudentListController extends Controller
             $sheet->setCellValue('B'.$row, $student->fname . " " . $student->lname);
             $sheet->setCellValue('C'.$row, $course->code);
             $sheet->setCellValue('D'.$row, $student->acadYear . "/" . ($student->acadTerm == 1 ? "1st Term" : "2nd Term"));
-            $sheet->setCellValue('E'.$row, $data->d->yes_useful_op1 ?? "");
-            $sheet->setCellValue('F'.$row, $data->d->yes_useful_op2 ?? "");
-            $sheet->setCellValue('G'.$row, $data->d->yes_useful_op3 ?? "");
-            $sheet->setCellValue('H'.$row, $data->d->yes_useful_op4 ?? "");
-            $sheet->setCellValue('I'.$row, $data->d->yes_useful_op5 ?? "");
+            $sheet->setCellValue('E'.$row, isset($data->d->yes_useful_op1) ? ($data->d->yes_useful_op1 == "on" ? "Yes" : "No")  : "No");
+            $sheet->setCellValue('F'.$row, isset($data->d->yes_useful_op2) ? ($data->d->yes_useful_op2 == "on" ? "Yes" : "No")  : "No");
+            $sheet->setCellValue('G'.$row, isset($data->d->yes_useful_op3) ? ($data->d->yes_useful_op3 == "on" ? "Yes" : "No")  : "No");
+            $sheet->setCellValue('H'.$row, isset($data->d->yes_useful_op4) ? ($data->d->yes_useful_op4 == "on" ? "Yes" : "No")  : "No");
+            $sheet->setCellValue('I'.$row, isset($data->d->yes_useful_op5) ? ($data->d->yes_useful_op5 == "on" ? "Yes" : "No")  : "No");
+            $sheet->setCellValue('J'.$row, isset($data->d->yes_useful_op6) ? ($data->d->yes_useful_op6 == "on" ? "Yes" : "No")  : "No");
+            $sheet->setCellValue('K'.$row, isset($data->d->yes_useful_op7) ? ($data->d->yes_useful_op7 == "on" ? "Yes" : "No")  : "No");
             $row++;
         }
 
