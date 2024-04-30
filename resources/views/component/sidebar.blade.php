@@ -152,7 +152,7 @@
                         $(this).remove()
                     }
                 } else if (user.user_type === 2) {
-                    const restricted = ["admin", "course", "studentlist", "profile"]
+                    const restricted = ["admin", "course", "studentlist"]
                     if (restricted.includes(href)) {
                         console.log("tests")
                         $(this).remove()
