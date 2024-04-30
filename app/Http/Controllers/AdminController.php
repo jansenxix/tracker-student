@@ -92,4 +92,12 @@ class AdminController extends Controller
         return view("registered-detail", ["student" => $admin]);
     }
 
+    public function profile($id)
+    {
+        $admin = admin::find($id);
+        $admin->data = json_decode($admin->data);
+        Log::info($admin);
+        return view("profileko", ["student" => $admin]);
+    }
+
 }

@@ -39,6 +39,7 @@ Route::get('/form/{id}', function ($id) {
     return view('form', ['id' => $id]);
 });
 
+
 Route::get('/profile', function () {
     return view('profile');
 });
@@ -64,6 +65,8 @@ Route::get('/job', [StudentListController::class, 'report3']);
 Route::get('/useful', [StudentListController::class, 'report4']);
 
 Route::get('/registered-student/detail/{id}', [AdminController::class, 'studentDetail']);
+
+Route::get('/profile/{id}', [AdminController::class, 'profile']);
 
 
 
@@ -98,6 +101,7 @@ Route::post('/comment/delete', [CommentController::class, 'delete']);
 Route::post('/comment', [CommentController::class, 'comment']);
 
 Route::post('/createStudent', [StudentListController::class, 'register']);
+Route::post('/updateStudent', [StudentListController::class, 'updateChed']);
 Route::get('/notification/{id}', [\App\Http\Controllers\NotificationController::class, 'getNotification']);
 Route::get('/post/{id}/{notifId}', function ($id, $notifId) {
     $notification = \App\Models\Notification::find($notifId);

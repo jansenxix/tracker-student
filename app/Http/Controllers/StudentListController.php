@@ -105,6 +105,21 @@ class StudentListController extends Controller
         return redirect("/");
     }
 
+    public function updateChed(Request $request)
+    {
+        $profile = $request['a'];
+        $admin = admin::find($request->id);
+        $admin->fName = $profile["name"];
+        $admin->Uname = $profile["email"];
+        $admin->file = "test.jpg";
+        $admin->data = json_encode($request->all());
+        $admin->student_id = $request["id"];
+        $admin->user_type = 2;
+        $admin->save();
+
+        return redirect("/profile/".$request->id);
+    }
+
     public function generateRandomPassword($length = 12)
     {
         return Str::random($length);
